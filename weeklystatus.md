@@ -13,6 +13,7 @@
 	1. 🔴 uClibc upgrade to 0.9.33.2 due to st_atim
 		[2022/05/19] tons of packages need ot upgrade
 	2. 🔴 gcc(4.6.2)/binutils
+    3. 🟡 [20022/05/20] pending task
    
 ## Smart 3
 
