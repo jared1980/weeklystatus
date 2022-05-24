@@ -8,18 +8,19 @@
 
 ## W724
 
-### Busybox upgrade to 1.35.0
+- Busybox upgrade to 1.35.0
 
-	1. 🔴 uClibc upgrade to 0.9.33.2 due to st_atim
-		[2022/05/19] tons of packages need ot upgrade
-	2. 🔴 gcc(4.6.2)/binutils
-    3. 🟡 [20022/05/20] pending task
+	- 🔴 [2022/05/19] uClibc upgrade to 0.9.33.2 due to st_atim, tons of packages need ot upgrade
+	    * host tools
+	    * binutils
+	    * compile gcc(4.6.2) with configure "--with-gmp=staging/host", "--with-mpc=staging/host", "--with-mpfr=staging/host", but library still not found...
+    - 🟡 [2022/05/20] pending task
    
 ## Smart 3
 
 ### Firmware release
 
-#### 5.0.001.1 (not scheduled yet)
+- 5.0.001.1 (not scheduled yet)
 
      - ✅ 20520 [SIP] CSeq number increased not within dialog but over all dialogs (adia) 23f0fdefb
 	 - ✅ 20549 A very unusual time stamp appears under Network / Mesh settings / Problem handling / Restart. (Mia) f3eda9fab
@@ -34,25 +35,28 @@
 
 ## GRV9519ZWAX44-B-23 (Smart 4 plus)
 
-### Hybrid reorder fine tune
+- Hybrid reorder fine tune
 
-### email notification failure with port 465 with commit 2f43cb5
+- email notification failure with port 465 with commit 2f43cb5
 
-	1. 📌 reported by CL 22/05/19
+	- 📌 [05/19] reported by CL
+	- ✅ [05/24] Fixed by adding more signature algorithms for TLS 1.3.
 	
-### Busybox upgrade to 1.35.0
+- Busybox upgrade to 1.35.0
 
-    1. ✅ build S4 Plus engineer firmware requested by CL (done)
-
+    - ✅ build S4 Plus engineer firmware requested by CL (done)
+    - 🟢 [2022/05/16] Under testing by CL
 
 ## Smart 5 (RDK)
 
-### wanManager
+- wanManager
 
-	1. 🟢 study how to fit in the LTE dongle status pulling/notifying
+	- 🟡 study how to fit in the LTE dongle status pulling/notifying
 
 
 ## Archived
+### 20222H
+#### Smart 4
 
 
 # Sophia
