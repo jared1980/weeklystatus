@@ -18,9 +18,9 @@ git pull --rebase
 git push origin main
 ```
 
-::: info
+
 ℹ To have write permission, you should provide your ssh public key first.
-:::
+
 
 ## Edit weekly status online via hackmd.io
 
