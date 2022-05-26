@@ -2,6 +2,7 @@
 🔴 : critical
 🟢 : ongoing
 🟡 : pending
+🚫 : canceled
 ✅ : finished
 
 # Jared
@@ -9,12 +10,16 @@
 ## W724
 
 - Busybox upgrade to 1.35.0
+  
+  The busybox has reported with 14 new vulnerabilities. W724 uses busybox 1.16.2 that was affected by 4. But the applet hash was not compiled and installed. Therefore, we need to fix 3 vulnerabilities which are CVE-2021-42378/42385/42386. They are all releated to awk.
 
-	- 🔴 [2022/05/19] uClibc upgrade to 0.9.33.2 due to st_atim, tons of packages need ot upgrade
+	- 🚫 [05/19] uClibc upgrade to 0.9.33.2 due to st_atim, tons of packages need ot upgrade
 	    * host tools
 	    * binutils
 	    * compile gcc(4.6.2) with configure "--with-gmp=staging/host", "--with-mpc=staging/host", "--with-mpfr=staging/host", but library still not found...
-    - 🟡 [2022/05/20] pending task
+    - ✅ [05/25] Port awk from 1.34.0
+    - 🟢 [05/26] Conduct more tests
+	
    
 ## Smart 3
 
@@ -36,6 +41,7 @@
 ## GRV9519ZWAX44-B-23 (Smart 4 plus)
 
 - Hybrid reorder fine tune
+    - 🟢 [05/23] habond.c kernel module study
 
 - email notification failure with port 465 with commit 2f43cb5
 
@@ -45,7 +51,7 @@
 - Busybox upgrade to 1.35.0
 
     - ✅ build S4 Plus engineer firmware requested by CL (done)
-    - 🟢 [2022/05/16] Under testing by CL
+    - 🟡 [05/16] Under testing by CL
 
 ## Smart 5 (RDK)
 
@@ -54,26 +60,17 @@
 	- 🟡 study how to fit in the LTE dongle status pulling/notifying
 
 
-## Archived
-### 20222H
-#### Smart 4
-
-
 # Sophia
 
 ## SPARK
 
 ## Smart 4 Plus
 
-## Archived
-
 # Terry
 
 ## Smart 4 A/B
 
 ### DHCP Service Sniffer
-
-## Archived
 
 # Goat
 
@@ -84,3 +81,11 @@
 ### Docker builder maintain and enhance
 
 ## Archived
+### 20222H
+#### Jared
+
+#### Sophia
+
+#### Terry
+
+#### Goat
