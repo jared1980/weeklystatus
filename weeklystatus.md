@@ -150,7 +150,39 @@
 
 ## Smart 4 A/B
 
-### DHCP Service Sniffer
+- Develop DHCP Client API - write standalone API
+
+  - ✅ Study packet sniffer for DHCP packet detection.
+
+  - ✅ Implement a packet sniffer program.
+
+  - ✅ Implement a UDP packet sniffer program.
+
+  - ✅ Implement a DHCP payload parser program.
+  - ✅ <span style="background-color : rgb(204, 255, 204)">(05/25 Wed.) Broadcast a DHCP Discovery frame.</span>
+    - ✅ <span style="background-color : rgb(204, 255, 204)"> (05/24 Tue.) Create a DHCP Discovery frame. </span>
+    - ✅ <span style="background-color : rgb(204, 255, 204)"> (05/25 Wed.) Broadcast DHCP Discovery frame. </span>
+
+- ✅<span style="background-color : rgb(204, 255, 204)">(05/26 Thu.) Receive a DHCP Offer frame.</span>
+    - ✅<span style="background-color : rgb(204, 255, 204)"> (05/24 Tue.) Adopt a polling mechanism to receive packets.</span>
+
+    - ✅<span style="background-color : rgb(204, 255, 204)"> (05/24 Tue.) Confirm whether it is the DHCP Offer packet.</span>
+
+    - ✅<span style="background-color : rgb(204, 255, 204)">(05/26 Thu.) Get the specific Option value.</span> 
+
+- Develop DHCP Client API - trim busybox udhcpc program
+
+  - ✅ Add a new applet into the busybox.
+
+  - ✅ <span style="background-color : rgb(204, 255, 204)"> (05/23 Mon.) Add a trimmed udhcpc program into the busybox.</span>
+
+    - ✅ Fix all dependence issues.
+
+    - ✅ Display the specific DHCP option content.
+
+    - ✅ <span style="background-color : rgb(204, 255, 204)">(05/24 Tue.)Trim the unused part. </span>
+      - ✅ <span style="background-color : rgb(204, 255, 204)">(05/24 Tue.)Trace busybox udhcpc code and Write an explanation document.</span>
+      - ✅<span style="background-color : rgb(204, 255, 204)">(05/23 Mon.)Trim the redundancy features. </span>
 
 # Goat
 
