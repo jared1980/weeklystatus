@@ -19,7 +19,7 @@ git push origin main
 ```
 
 
-ℹ To write, you should provide your ssh public key first.
+ℹ To have write permission, please provide me your github account name.
 
 
 ## With hackmd.io online update
