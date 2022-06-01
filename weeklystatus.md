@@ -18,8 +18,8 @@
 	    * binutils
 	    * compile gcc(4.6.2) with configure "--with-gmp=staging/host", "--with-mpc=staging/host", "--with-mpfr=staging/host", but library still not found...
     - ✅ [05/25] Port awk from 1.34.0
-    - 🟢 [05/26] Conduct more tests
-	
+    - ✅ [05/26] Conduct more tests
+    - ✅ [05/31] Commit patch
    
 ## Smart 3
 
@@ -42,16 +42,21 @@
 
 - Hybrid reorder fine tune
     - 🟢 [05/23] habond.c kernel module study
+	1. How GRE skb_buf hand over to [take over from] habond module
+	2. What's RCU (Read-Copy-Update) ?
 
-- email notification failure with port 465 with commit 2f43cb5
-
-	- 📌 [05/19] reported by CL
-	- ✅ [05/24] Fixed by adding more signature algorithms for TLS 1.3.
-	
 - Busybox upgrade to 1.35.0
 
     - ✅ build S4 Plus engineer firmware requested by CL (done)
     - 🟡 [05/16] Under testing by CL
+
+## VRV9517WAX44 1-B-23 (Smart 4 MS)
+
+### VPN
+ - 20079 [BBTC][VPN][Internet-Access] When triggering IP address change by an connected VPN client (Wireguard) the Speedport does not come back online
+ - 20122 The Router can be incapacitated via a VPN connection
+   - ✅ [05/31] 3 conditional cases in ConnectCGI(): disable/online/reconnect. "Change IP address" trigger disable, sleep, onlne. In VPN case, disable will disconnect VPN connection that cause "online" never happen.
+   - ✅ [06/01] Use "reconnect" seem work fine. hand over to mia
 
 ## Smart 5 (RDK)
 
@@ -181,6 +186,10 @@
 ## Archived
 ### 20222H
 #### Jared
+##### GRV9519ZWAX44-B-23 (Smart 4 plus)
+ - email notification failure with port 465 with commit 2f43cb5
+    - 📌 [05/19] reported by CL
+    - ✅ [05/24] Fixed by adding more signature algorithms for TLS 1.3.
 
 #### Sophia
 
