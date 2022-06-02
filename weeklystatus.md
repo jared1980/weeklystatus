@@ -44,11 +44,15 @@
     - 🟢 [05/23] habond.c kernel module study
 	1. How GRE skb_buf hand over to [take over from] habond module
 	2. What's RCU (Read-Copy-Update) ?
+	3. tripple defined of ""struct gre_o_seqno", move to net/ip_tunnels.h??
+	4. When refer to function pointer, no rcu_read_lock/rcu_read_unlock pair.
+	5. When getting configure items, tid is "int", it SHOULD be "void *"!?
 
 - Busybox upgrade to 1.35.0
 
     - ✅ build S4 Plus engineer firmware requested by CL (done)
     - 🟡 [05/16] Under testing by CL
+      - ✅ [06/01] Activated SIP in Router mode, then switch to DSL modem mode, there are lots of "waitting for arc-sip ready" and could not reset to default. The upgradion should not be a factor to cause this problem.
 
 ## VRV9517WAX44 1-B-23 (Smart 4 MS)
 
