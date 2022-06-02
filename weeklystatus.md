@@ -76,14 +76,11 @@
 - GPL release
     - 📌 Release SOP document
 
-- ✅ Disable OpenWrt failsafe mode
-
 ## GRV9519ZWAX44-B-23 (Smart 4 plus)
 
 - Produce Smart 4 Plus with 6715X
     - Send two samples to Benedikt
-        - ✅ Prepare engineering fw
-        - 📌 perform WiFi basic function test
+        - ✅ perform WiFi basic function test
     - 📌 [6/10] Provide master file for sample run 2
 
 - ErP issues are encountered in the DT lab (GPON and xDSL)
@@ -93,44 +90,44 @@
     - 🟡 DUT reboot when performing the ppp link up and link down repeatedly.
         - Change sleep time to 10 sec in the arc_email_push_system_report.sh, then this issue isn't observed.
 
-- Issues reported from factory
-    - ✅ Provide the explanation for the Display, LED and UI behavior when user hasn't enter ppp setting and he can access the Internet.
-    - ✅ Get PHY ID failed (0x0000) after the PDL is executed
-
 - Sometimes iptables rules are missing
     - 🟢 Study the solutions from git.netfilter.org
-
-- ✅ Disable OpenWrt failsafe mode
-
-- ✅ Don't install the dropbear binary in the firmware
 
 ### Formal release
 
 - [6/13] 2.6.000.0
-    - ✅ New WiFi driver 21.2P1
-    - Final power table for 6715x samples
-        - 🟡 The final power table is available after the certification is finished.
+    - ✅ [5/30] 2.6.000.0-RC1
+:::info
+Scope List
+- ✅ New WiFi driver 21.2P1 (RC1)
+- Final power table for 6715x samples
+    - 🟡 The final power table is available after the certification is finished.
+:::
 
 - [7/04] 3.0.000.0
-    - 📌 New UI simulation 2.19.198
-    - ✅ CR 22-1275 Start the integrated iPerf3 server via Display V2
-    - 📌 CR Smart Home changes in UI
-    - 📌 New user manual
-    - 🟢 20341 [BQFN] Unexpected reboot of HG in long term test setups
-    - ✅ 20443 [IPPBX] Missing audion during incoming calls due to false transfer of sdp of internal SIP client in 18x
-    - 🟢 20495 [IVA4][SIP] NIMS: Route Header / Service Route Smart 4
-    - 📌 20510 [IPPBX] IPPBX CSeq handling in multi dialog call not correctly
-    - ✅ 20554 [IPPBX] RTP of 1st dlg not transferred to IPPBX extension after switch back from 2nd dlg-LAN
-    - 📌 20557 [IPPBX] Internal call transfer to or from IPPBX extension does not work (BT-029)
-    - ✅ 20576 [GUI] Incorrect WAN port status in mini UI while using xDSL modem mode
-    - ✅ 20595 [BQFN] IPv6 prefix change impact LAN to WAN traffic
-    - ✅ 20596 [BQFN] RTT impact and throughput drops on LAN port 2
-    - 🟢 20582 Smart 4 (type A and B): No outgoing telephony when 1st number is deactivated (BT-030/NIMIC-0018112362)
-    - 🟢 20302 [Multicast Forwarding] Multicast packets are not forwarded if the router uses GPON for WAN access
-    - 🟢 20457 [HDSM][ARC][SMART4 PLUS] Agent on connected MESH repeater is killed during backhaul changes
-    - IPTV benchmark:
-        - Optimization/implementation changes to be defined
-        - Optional: TACKM activation for all customers (to be discussed)
+    - ✅ [5/31] 3.0.000.0-RC1 (DT asked us to have RC1 next week for test in benchmark lab.)
+:::info
+Scope List
+- 🟢 New UI simulation 2.19.198
+- ✅ CR 22-1275 Start the integrated iPerf3 server via Display V2
+- 🟢 CR Smart Home changes in UI
+- 📌 New user manual
+- 🟢 20341 [BQFN] Unexpected reboot of HG in long term test setups
+- ✅ 20443 [IPPBX] Missing audion during incoming calls due to false transfer of sdp of internal SIP client in 18x
+- 🟢 20495 [IVA4][SIP] NIMS: Route Header / Service Route Smart 4
+- 📌 20510 [IPPBX] IPPBX CSeq handling in multi dialog call not correctly
+- ✅ 20554 [IPPBX] RTP of 1st dlg not transferred to IPPBX extension after switch back from 2nd dlg-LAN
+- 📌 20557 [IPPBX] Internal call transfer to or from IPPBX extension does not work (BT-029)
+- ✅ 20576 [GUI] Incorrect WAN port status in mini UI while using xDSL modem mode
+- ✅ 20595 [BQFN] IPv6 prefix change impact LAN to WAN traffic (RC1)
+- ✅ 20596 [BQFN] RTT impact and throughput drops on LAN port 2 (RC1)
+- 🟢 20582 Smart 4 (type A and B): No outgoing telephony when 1st number is deactivated (BT-030/NIMIC-0018112362)
+- 🟢 20302 [Multicast Forwarding] Multicast packets are not forwarded if the router uses GPON for WAN access
+- ✅ 20457 [HDSM][ARC][SMART4 PLUS] Agent on connected MESH repeater is killed during backhaul changes
+- IPTV benchmark:
+    - Optimization/implementation changes to be defined
+    - Optional: TACKM activation for all customers (to be discussed)
+:::
 
 - [8/01] 3.0.001.0
     - Scope to be defined
@@ -148,8 +145,10 @@
 
 ## VRV9517ZWAX34-A-SP (Spark)
 
-- [JIRA 24398-22][Moderate] Existed IPv4 traffic didn't stop when connected client entered blocked time of MAC filter.
-    - ✅ Instead of using arc-middle-mod-common-net API, call CLI command to get LAN/WLAN client list to avoid compile error.
+- ✅ LAN client cannot establish PPTP tunnel to server
+    - This issue happened when the HW Acceleration and GRE Learning are enabled.
+    - The GRE Learning is disabled by default in Spark project, so this issue won't happen.
+    - This issue has gone if we enable GRE Learning and merge the patch from Brcm.
 
 ## Smart 5
 
@@ -197,12 +196,26 @@
 ## Archived
 ### 20222H
 #### Jared
+
 ##### GRV9519ZWAX44-B-23 (Smart 4 plus)
  - email notification failure with port 465 with commit 2f43cb5
     - 📌 [05/19] reported by CL
     - ✅ [05/24] Fixed by adding more signature algorithms for TLS 1.3.
 
 #### Sophia
+
+##### VRV9519XWAC44 3-B-23 (Smart 3)
+- Disable OpenWrt failsafe mode
+
+##### GRV9519ZWAX44-B-23 (Smart 4 plus)
+- Disable OpenWrt failsafe mode
+- Don't install the dropbear binary in the firmware
+- Issues reported from factory
+    - Provide the explanation for the Display, LED and UI behavior when user hasn't enter ppp setting and he can access the Internet.
+    - Get PHY ID failed (0x0000) after the PDL is executed
+
+##### VRV9517ZWAX34-A-SP (Spark)
+- [JIRA 24398-22][Moderate] Existed IPv4 traffic didn't stop when connected client entered blocked time of MAC filter.
 
 #### Terry
 
