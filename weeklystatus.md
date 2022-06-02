@@ -20,7 +20,7 @@
     - ✅ [05/25] Port awk from 1.34.0
     - ✅ [05/26] Conduct more tests
     - ✅ [05/31] Commit patch
-   
+  
 ## Smart 3
 
 ### Firmware release
@@ -161,19 +161,26 @@
   - ✅ Implement a packet sniffer program.
   - ✅ Implement a UDP packet sniffer program.
   - ✅ Implement a DHCP payload parser program.
-  - ✅ <span style="background-color : rgb(204, 255, 204)">(05/25 Wed.) Create and broadcast DHCP Discovery frame.</span>
-  - ✅ <span style="background-color : rgb(204, 255, 204)">(05/26 Thu.) Receive and parse DHCP Offer frame.</span>
+  - ✅ (W21) Create and broadcast DHCP Discovery frame.
+  - ✅ (W21) Receive and parse DHCP Offer frame.
   - 📌 New openWRT package in arcadyan-utilities.
-
 - Develop DHCP Client API - trim busybox udhcpc program
 
   - ✅ Add a new applet into the busybox.
-  - ✅ <span style="background-color : rgb(204, 255, 204)"> (05/23 Mon.) Add a trimmed udhcpc program into the busybox.</span>
+  - ✅  (W21) Add a trimmed udhcpc program into the busybox.
     - ✅ Fix all dependence issues.
     - ✅ Display the specific DHCP option content.
-    - ✅ <span style="background-color : rgb(204, 255, 204)">(05/24 Tue.)Trim the unused part. </span>
-  - 📌 New applet in Smart 4 busybox
-      
+    - ✅ (W21) Trim the unused part.
+  - 📌 **New applet in Smart 4 busybox**
+  
+    - **✅ (W22) New a busybox patch, named `600-add-udhcpc-trimmed-applet.patch`**
+    - **✅ (W22) Confirm image including new busybox applet `udhcpc_trimmed`**
+    - 📌 Confirm the busybox applet `udhcpc_trimmed` work properly. 
+    - 📌 Replace the overwrite way with the patch way in the busybox package.
+      <!--p.s. overwrite way does copy all files in `package/busybox/src.dt` folder to `build-dir/target*/busybox-*/`-->
+
+​     
+
 
 # Goat
 
