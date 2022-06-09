@@ -3,15 +3,17 @@
 
 ## With your favor editor and git command
 
-	1. clone weekly report from github
+    - Add ssh public key to your github Settings >> SSH and GPG keys
+
+    - clone weekly report from github
 
 ``` shell
-git clone https://github.com/jared1980/weeklystatus.git
+git clone git@github.com:jared1980/weeklystatus.git
 ```
 
-	2. Update weekly report with your favor editor.
+    - Update weekly report with your favor editor.
 	
-	3. sync to remote
+    - sync to remote
 
 ``` shell
 git pull --rebase
