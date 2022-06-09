@@ -71,8 +71,6 @@
 ## GRV9519ZWAX44-B-23 (Smart 4 plus)
 
 - Produce Smart 4 Plus with 6715X
-    - Send two samples to Benedikt
-        - ✅ perform WiFi basic function test
     - 📌 [6/10] Provide master file for sample run 2
 
 - ErP issues are encountered in the DT lab (GPON and xDSL)
@@ -83,12 +81,23 @@
         - Change sleep time to 10 sec in the arc_email_push_system_report.sh, then this issue isn't observed.
 
 - Sometimes iptables rules are missing
-    - 🟢 Study the solutions from git.netfilter.org
+    - 🟡 Study the solutions from git.netfilter.org
+
+- Issue report from factory
+    - ✅ Fail to get the DECT firmware version
+        - DECT firmware update is triggered after the firmware of DUT was updated from shipping fw to MFG fw. We can get the DECT firmware version after the DECT firmware update is finished. (5 min)
+        - To save time, the alignment of DECT firmware version in EEPROM, MFG fw and shipping fw is necessary. (It is under discussion with PM.)
+
+- Issues report in 2.6.000.0-RC1 from EIT
+    - 🟢 Homepod mini deauth from AP every hour
+        - This issue isn't observed if we change the config value of WPA_GroupRekey from 3600 to 0.
+    - 🟢 Error message: rdd dhd helper: release of not allocated SKB: idx=544, ptr=1287
 
 ### Formal release
 
 - [6/13] 2.6.000.0
-    - ✅ [5/30] 2.6.000.0-RC1
+    - [5/30] 2.6.000.0-RC1
+    - ✅ [6/08] Provide 2.6.000.0 formal firmware to EIT
 :::info
 Scope List
 - ✅ New WiFi driver 21.2P1 (RC1)
@@ -97,7 +106,8 @@ Scope List
 :::
 
 - [7/04] 3.0.000.0
-    - ✅ [5/31] 3.0.000.0-RC1 (DT asked us to have RC1 next week for test in benchmark lab.)
+    - [5/31] 3.0.000.0-RC1 (DT asked us to have RC1 next week for test in benchmark lab.)
+    - 🟢 [6/13] 3.0.000.0-RC2
 :::info
 Scope List
 - 🟢 New UI simulation 2.19.198
@@ -129,6 +139,9 @@ Scope List
 - Reboot issue
     - 🟡 The HW reboot happened when performing the ADSL link up/down test every 2 minutes.
 
+- Voice Redundancy
+    - ✅ Firewall also accept VoIP packets from LTE WAN (eth0.0) interface.
+
 ## VRV9517WAX44-1-B-23: Typ B (Smart4 TypeB)
 
 - 🟡 [BUGFIX/JIRA/SGCM-126] DUT didn’t send the PADI to server after DUT restarted. (WAN type: Ethernet)
@@ -137,10 +150,10 @@ Scope List
 
 ## VRV9517ZWAX34-A-SP (Spark)
 
-- ✅ LAN client cannot establish PPTP tunnel to server
-    - This issue happened when the HW Acceleration and GRE Learning are enabled.
-    - The GRE Learning is disabled by default in Spark project, so this issue won't happen.
-    - This issue has gone if we enable GRE Learning and merge the patch from Brcm.
+## VRV9518baax24b2g (OTE)
+
+- ✅ [JIRA 9518B-23] Clients connected to 5G Guest AP cannot forward WAN traffic
+    - This issue isn't observed if the flow cache is disabled.
 
 ## Smart 5
 
@@ -164,9 +177,7 @@ Scope List
 - Develop DHCP Client API - trim busybox udhcpc program
 
   - ✅ Add a new applet into the busybox.
-  
   - ✅  (W21) Add a trimmed udhcpc program into the busybox.
-    
     - ✅ Fix all dependence issues.
     - ✅ Display the specific DHCP option content.
     - ✅ (W21) Trim the unused part.
@@ -237,6 +248,7 @@ The busybox has reported with 14 new vulnerabilities. W724 uses busybox 1.16.2 t
 
 ##### VRV9517ZWAX34-A-SP (Spark)
 - [JIRA 24398-22][Moderate] Existed IPv4 traffic didn't stop when connected client entered blocked time of MAC filter.
+- LAN client cannot establish PPTP tunnel to server if the GRE Learning are enabled.
 
 #### Terry
 
