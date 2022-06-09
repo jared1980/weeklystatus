@@ -164,22 +164,28 @@ Scope List
   - ✅ Implement a packet sniffer program.
   - ✅ Implement a UDP packet sniffer program.
   - ✅ Implement a DHCP payload parser program.
-  - ✅ (W21) Create and broadcast DHCP Discovery frame.
+  - ✅ (W21) Create and broadcast the DHCP Discovery frame.
   - ✅ (W21) Receive and parse DHCP Offer frame.
-  - 📌 New openWRT package in arcadyan-utilities.
+  - 🟢 (W23) New OpenWrt package in Arcadyan-utilities.
+    - 🟢 (W23) Fix interface issue. ( add interface option to communicate with DHCP server )
+  
 - Develop DHCP Client API - trim busybox udhcpc program
 
   - ✅ Add a new applet into the busybox.
+  
   - ✅  (W21) Add a trimmed udhcpc program into the busybox.
+    
     - ✅ Fix all dependence issues.
     - ✅ Display the specific DHCP option content.
     - ✅ (W21) Trim the unused part.
-  - 📌 **New applet in Smart 4 busybox**
+    
+  - ✅ New applet in Smart 4 busybox
   
-    - **✅ (W22) New a busybox patch, named `600-add-udhcpc-trimmed-applet.patch`**
-    - **✅ (W22) Confirm image including new busybox applet `udhcpc_trimmed`**
-    - 📌 Confirm the busybox applet `udhcpc_trimmed` work properly. 
-    - 📌 Replace the overwrite way with the patch way in the busybox package.
+    - ✅ (W22) New a busybox patch, named `600-add-udhcpc-trimmed-applet.patch`
+    - ✅ (W22) Confirm image including new busybox applet `udhcpc_trimmed`
+    - ✅ (W23) Confirm the busybox applet `udhcpc_trimmed` works properly.
+    - ✅ (W23) Fix interface issue. ( add interface option to communicate with DHCP server )
+    - ✅ (W23) Replace the overwrite way with the patch way in the busybox package.
       <!--p.s. overwrite way does copy all files in `package/busybox/src.dt` folder to `build-dir/target*/busybox-*/`-->
 
 ​     
