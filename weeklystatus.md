@@ -187,11 +187,23 @@ Scope List
 
 # Goat
 
-## Smart 5
+## WN9722OAX22-DM (AIOS7.0)
+ - ✅ [6/7] Try to build code.
+ - 🟢 [6/7] Update firmware via SP-flash-tool.
+ - 🟢 [6/7] Study document and review git commit log.
 
 ## Common
 
 ### Docker builder maintain and enhance
+ - ✅ [6/6] Review git commit log.
+ - ✅ [6/6] Delete duplicate path in commands.
+ - ✅ [6/6] Merge two create container action cases to one.
+     -  Use "add-host" replace host mode network.
+ - ✅ [6/6] Add new platform to builder.
+     - MTK
+     - AIOS7.0
+ - ✅ [6/7] Detect if toolchains are installed when create container.
+ - ✅ [6/8] Add package "tree" on smart4 platform.
 
 ## Archived
 ### 20222H
