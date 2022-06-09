@@ -8,18 +8,6 @@
 # Jared
 
 ## W724
-
-- Busybox upgrade to 1.35.0
-  
-  The busybox has reported with 14 new vulnerabilities. W724 uses busybox 1.16.2 that was affected by 4. But the applet hash was not compiled and installed. Therefore, we need to fix 3 vulnerabilities which are CVE-2021-42378/42385/42386. They are all releated to awk.
-
-	- 🚫 [05/19] uClibc upgrade to 0.9.33.2 due to st_atim, tons of packages need ot upgrade
-	    * host tools
-	    * binutils
-	    * compile gcc(4.6.2) with configure "--with-gmp=staging/host", "--with-mpc=staging/host", "--with-mpfr=staging/host", but library still not found...
-    - ✅ [05/25] Port awk from 1.34.0
-    - ✅ [05/26] Conduct more tests
-    - ✅ [05/31] Commit patch
   
 ## Smart 3
 
@@ -42,25 +30,29 @@
 
 - Hybrid reorder fine tune
     - 🟢 [05/23] habond.c kernel module study
-	1. How GRE skb_buf hand over to [take over from] habond module
-	2. What's RCU (Read-Copy-Update) ?
-	3. tripple defined of ""struct gre_o_seqno", move to net/ip_tunnels.h??
-	4. When refer to function pointer, no rcu_read_lock/rcu_read_unlock pair.
-	5. When getting configure items, tid is "int", it SHOULD be "void *"!?
+       - ✅ [06/09] skb buffer flow in RX direct - from dev to gre_reorder
+       - 📌 [06/09] skb buffer flow in TX direct
+       - ✅ [06/09] What's RCU (Read-Copy-Update) ?
+       - ✅ [06/09] gre_reorder() tracing
+       - 🟢 [06/09] reorder_buffer_timeout_handler() and reorder_buffer_calculate_timeout() tracing
+
+    - some other possible enhancements
+       - 📌 tripple defined of ""struct gre_o_seqno", move to net/ip_tunnels.h??
+       - 📌 During getting configure items, tid data type is "int", it SHOULD be "void *"!?
+       - 📌 rcu_read_lock/rcu_read_unlock, hook function pointer update with lock
+
 
 - Busybox upgrade to 1.35.0
 
     - ✅ build S4 Plus engineer firmware requested by CL (done)
     - 🟡 [05/16] Under testing by CL
-      - ✅ [06/01] Activated SIP in Router mode, then switch to DSL modem mode, there are lots of "waitting for arc-sip ready" and could not reset to default. The upgradion should not be a factor to cause this problem.
+       - ✅ [06/01] Activated SIP in Router mode, then switch to DSL modem mode, there are lots of "waitting for arc-sip ready" and could not reset to default. The upgradion should not be a factor to cause this problem.
+	   - ✅ [06/06] Smart 4 Plus: finished. all looking good.
+	   - 🟢 [06/06] Smart 4 MS: conducting
 
 ## VRV9517WAX44 1-B-23 (Smart 4 MS)
 
 ### VPN
- - 20079 [BBTC][VPN][Internet-Access] When triggering IP address change by an connected VPN client (Wireguard) the Speedport does not come back online
- - 20122 The Router can be incapacitated via a VPN connection
-   - ✅ [05/31] 3 conditional cases in ConnectCGI(): disable/online/reconnect. "Change IP address" trigger disable, sleep, onlne. In VPN case, disable will disconnect VPN connection that cause "online" never happen.
-   - ✅ [06/01] Use "reconnect" seem work fine. hand over to mia
 
 ## Smart 5 (RDK)
 
@@ -219,6 +211,17 @@ Scope List
  - email notification failure with port 465 with commit 2f43cb5
     - 📌 [05/19] reported by CL
     - ✅ [05/24] Fixed by adding more signature algorithms for TLS 1.3.
+
+#####
+ - 20079 [BBTC][VPN][Internet-Access] When triggering IP address change by an connected VPN client (Wireguard) the Speedport does not come back online
+ - 20122 The Router can be incapacitated via a VPN connection
+
+When "Change IP address" pressed, browser send "disable" and "online" to CGI. But "online" never reach httpd due to Internet is disconnected.
+
+##### W724
+ - Busybox CVE issues
+
+The busybox has reported with 14 new vulnerabilities. W724 uses busybox 1.16.2 that was affected by 4. But the applet hash was not compiled and installed. Therefore, we need to fix 3 vulnerabilities which are CVE-2021-42378/42385/42386. They are all releated to awk. So porting 1.34.0 awk to busybox
 
 #### Sophia
 
