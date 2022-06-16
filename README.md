@@ -3,26 +3,26 @@
 
 ## With your favor editor and git command
 
-    - Add ssh public key to your github Settings >> SSH and GPG keys
+    1. Add ssh public key to your github Settings >> SSH and GPG keys
 
-    - clone weekly report from github
+    2. Provide me your github account name
+
+    3. Accept the invitation of collaboration
+
+    4. clone weekly report from github
 
 ``` shell
 git clone git@github.com:jared1980/weeklystatus.git
 ```
 
-    - Update weekly report with your favor editor.
-	
-    - sync to remote
+    5. Update weekly report with your favor editor.
+
+    6. sync to remote
 
 ``` shell
 git pull --rebase
 git push origin main
 ```
-
-
-ℹ To have write permission, please provide me your github account name.
-
 
 ## With hackmd.io online update
 
