@@ -8,7 +8,7 @@
 # Jared
 
 ## W724
-  
+
 ## Smart 3
 
 ### Firmware release
@@ -98,18 +98,18 @@
 - [6/13] 2.6.000.0
     - [5/30] 2.6.000.0-RC1
     - ✅ [6/08] Provide 2.6.000.0 formal firmware to EIT
-:::info
-Scope List
+    :::info
+    Scope List
 - ✅ New WiFi driver 21.2P1 (RC1)
 - Final power table for 6715x samples
     - 🟡 The final power table is available after the certification is finished.
-:::
+    :::
 
 - [7/04] 3.0.000.0
     - [5/31] 3.0.000.0-RC1 (DT asked us to have RC1 next week for test in benchmark lab.)
     - 🟢 [6/13] 3.0.000.0-RC2
-:::info
-Scope List
+    :::info
+    Scope List
 - 🟢 New UI simulation 2.19.198
 - ✅ CR 22-1275 Start the integrated iPerf3 server via Display V2
 - 🟢 CR Smart Home changes in UI
@@ -129,7 +129,7 @@ Scope List
 - IPTV benchmark:
     - Optimization/implementation changes to be defined
     - Optional: TACKM activation for all customers (to be discussed)
-:::
+    :::
 
 - [8/01] 3.0.001.0
     - Scope to be defined
@@ -161,37 +161,38 @@ Scope List
 
 # Terry
 
-## Smart 4 A/B
+## Smart 4 plus
+
+> GRV9519ZWAX44-B-23
 
 - Develop DHCP Client API - write standalone API
 
-  - ✅ Study packet sniffer for DHCP packet detection.
-  - ✅ Implement a packet sniffer program.
-  - ✅ Implement a UDP packet sniffer program.
-  - ✅ Implement a DHCP payload parser program.
-  - ✅ (W21) Create and broadcast the DHCP Discovery frame.
-  - ✅ (W21) Receive and parse DHCP Offer frame.
-  - 🟢 (W23) New OpenWrt package in Arcadyan-utilities.
-    - 🟢 (W23) Fix interface issue. ( add interface option to communicate with DHCP server )
-  
+  - ✅ (W24) New OpenWrt package in Arcadyan-utilities with shared library way.
+    - ✅ (W24) Generate a shared library.
+    - ✅ (W24) Link a shared library.
+  - 🟢 (W24) Fix segment fault issue.
+    - 🟢 (W24) Find the caused reason.
+    - 📌 Add -v verbose optional argument.
+    - 📌 Add UDP packet check.
+    - 📌 Add packet size check.
+
+
+
 - Develop DHCP Client API - trim busybox udhcpc program
-
-  - ✅ Add a new applet into the busybox.
-  - ✅  (W21) Add a trimmed udhcpc program into the busybox.
-    - ✅ Fix all dependence issues.
-    - ✅ Display the specific DHCP option content.
-    - ✅ (W21) Trim the unused part.
-    
-  - ✅ New applet in Smart 4 busybox
+  - 📌 Confirm if the program works properly.
   
-    - ✅ (W22) New a busybox patch, named `600-add-udhcpc-trimmed-applet.patch`
-    - ✅ (W22) Confirm image including new busybox applet `udhcpc_trimmed`
-    - ✅ (W23) Confirm the busybox applet `udhcpc_trimmed` works properly.
-    - ✅ (W23) Fix interface issue. ( add interface option to communicate with DHCP server )
-    - ✅ (W23) Replace the overwrite way with the patch way in the busybox package.
-      <!--p.s. overwrite way does copy all files in `package/busybox/src.dt` folder to `build-dir/target*/busybox-*/`-->
 
-​     
+
+
+- Others
+  - ✅ (W24) Study new OpenWrt packet by Autotools, a kind of build system.
+    <!-- [build system overview] https://julienjorge.medium.com/an-overview-of-build-systems-mostly-for-c-projects-ac9931494444 -->
+  - ✅ (W24) Study GDB core dump file.
+  - ✅ (W24) Install the GDB program in the Smart4 device via TFTP.
+
+
+
+
 
 
 # Goat
@@ -251,6 +252,22 @@ The busybox has reported with 14 new vulnerabilities. W724 uses busybox 1.16.2 t
 - LAN client cannot establish PPTP tunnel to server if the GRE Learning are enabled.
 
 #### Terry
+
+##### GRV9519ZWAX44-B-23 (Smart 4 plus)
+
+- Develop an application to catch DHCP option content. ( especially DHCP option 43 )
+  - Method A: standalone application way
+    - (W23) New a OpenWrt package, named `arc_dhcp_option_catcher`.
+    - (W23) Fix interface issue. ( add interface option to communicate with DHCP server )
+  - Method B: busybox way
+    - (W22) New a busybox patch, named `600-add-udhcpc-trimmed-applet.patch`, to new applet `trimmed_dhcpc`.
+    - (W23) Fix interface issue. ( add interface option to communicate with DHCP server )
+
+
+
+- Busybox
+  - (W23) Replace the overwrite way with the patch way in the busybox package.
+    <!--p.s. overwrite way does copy all files in `package/busybox/src.dt` folder to `build-dir/target*/busybox-*/`-->
 
 #### Goat
 
