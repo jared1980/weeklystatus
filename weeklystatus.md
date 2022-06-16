@@ -16,15 +16,15 @@
 - 5.0.001.1 (not scheduled yet)
 
      - ✅ 20520 [SIP] CSeq number increased not within dialog but over all dialogs (adia) 23f0fdefb
-	 - ✅ 20549 A very unusual time stamp appears under Network / Mesh settings / Problem handling / Restart. (Mia) f3eda9fab
-	 - ✅ 20550 Wrong encryption information is displayed for clients behind a repeater. (Joe) 218487876
-	 - ✅ 20579 [IVA4][GUI] Optimization of the change request smart 3 2022-1255 (Ben) 72e585f1b
-	 - ✅ 20581 [USB Tethering] The GUI hangs up during the fallback from the cellular network to DSL (Mia) 6cf3bc205
-	 - 📌 20226 [Smart3 HDSM14] sysfs reports wrong speeds for Gigabit Ethernet connections
-	 - 📌 20560 [HDSM][ARC][Smart 3 Drop 25] CC_GetMeshStaInfo failure , unknown MAC
-	 - 📌 20580 [HDSM][ARC][Smart3] Connected devices via Wifi are not shown in Assia GUI
-	 - ✅ 20583 [HDSM][ARC][Smart 3 HDSM18] Serial number mismatch between CC_GetMeshDevice and CC_GetCpeInfo (Joe) 21c049dab 3cb26b09a
-	 - ✅ CR 22-1285 Smart 3 New PDF User Manual (20220511) 3acf220e9
+     - ✅ 20549 A very unusual time stamp appears under Network / Mesh settings / Problem handling / Restart. (Mia) f3eda9fab
+     - ✅ 20550 Wrong encryption information is displayed for clients behind a repeater. (Joe) 218487876
+     - ✅ 20579 [IVA4][GUI] Optimization of the change request smart 3 2022-1255 (Ben) 72e585f1b
+     - ✅ 20581 [USB Tethering] The GUI hangs up during the fallback from the cellular network to DSL (Mia) 6cf3bc205
+     - 📌 20226 [Smart3 HDSM14] sysfs reports wrong speeds for Gigabit Ethernet connections
+     - 📌 20560 [HDSM][ARC][Smart 3 Drop 25] CC_GetMeshStaInfo failure , unknown MAC
+     - 📌 20580 [HDSM][ARC][Smart3] Connected devices via Wifi are not shown in Assia GUI
+     - ✅ 20583 [HDSM][ARC][Smart 3 HDSM18] Serial number mismatch between CC_GetMeshDevice and CC_GetCpeInfo (Joe) 21c049dab 3cb26b09a
+     - ✅ CR 22-1285 Smart 3 New PDF User Manual (20220511) 3acf220e9
 
 ## GRV9519ZWAX44-B-23 (Smart 4 plus)
 
@@ -47,8 +47,8 @@
     - ✅ build S4 Plus engineer firmware requested by CL (done)
     - 🟡 [05/16] Under testing by CL
        - ✅ [06/01] Activated SIP in Router mode, then switch to DSL modem mode, there are lots of "waitting for arc-sip ready" and could not reset to default. The upgradion should not be a factor to cause this problem.
-	   - ✅ [06/06] Smart 4 Plus: finished. all looking good.
-	   - 🟢 [06/06] Smart 4 MS: conducting
+       - ✅ [06/06] Smart 4 Plus: finished. all looking good.
+       - 🟢 [06/06] Smart 4 MS: conducting
 
 ## VRV9517WAX44 1-B-23 (Smart 4 MS)
 
@@ -58,7 +58,7 @@
 
 - wanManager
 
-	- 🟡 study how to fit in the LTE dongle status pulling/notifying
+    - 🟡 study how to fit in the LTE dongle status pulling/notifying
 
 
 # Sophia
@@ -197,22 +197,22 @@ Scope List
 # Goat
 
 ## WN9722OAX22-DM (AIOS7.0)
- - ✅ [6/7] Try to build code.
- - 🟢 [6/7] Update firmware via SP-flash-tool.
+
+ - 🚫 [6/7] Update firmware via SP-flash-tool.
  - 🟢 [6/7] Study document and review git commit log.
+ - 🟢 [6/14] Test all script by commands of AIOS6.5.
+ - ✅ [6/14] Create git repo of AIOS seris on gitea server.
+     - AIOS6.5 : Follow and update with codebase provided by Wind.
+     - AIOS7.0 : Trace codebase provided by MTK and our develop.
+ - ✅ [6/14] Setup FW upload environment and load FW.
+ - ✅ [6/14] Create project "DENON AIOS7.0" and new "AIOS7.0 info" on confluence. 
 
 ## Common
 
 ### Docker builder maintain and enhance
- - ✅ [6/6] Review git commit log.
- - ✅ [6/6] Delete duplicate path in commands.
- - ✅ [6/6] Merge two create container action cases to one.
-     -  Use "add-host" replace host mode network.
- - ✅ [6/6] Add new platform to builder.
-     - MTK
-     - AIOS7.0
- - ✅ [6/7] Detect if toolchains are installed when create container.
- - ✅ [6/8] Add package "tree" on smart4 platform.
+
+ - ✅ [6/14] Fix smart4 platform "zlib" multi-version problem.
+ - ✅ [6/14] Let builder can be executed anywhere not only in builder folder.
 
 ## Archived
 ### 20222H
@@ -253,3 +253,21 @@ The busybox has reported with 14 new vulnerabilities. W724 uses busybox 1.16.2 t
 #### Terry
 
 #### Goat
+
+##### WN9722OAX22-DM (AIOS7.0)
+
+ - ✅ [6/7] Try to build code.
+
+##### Common
+
+###### Docker builder maintain and enhance
+
+ - ✅ [6/6] Review git commit log.
+ - ✅ [6/6] Delete duplicate path in commands.
+ - ✅ [6/6] Merge two create container action cases to one.
+     -  Use "add-host" replace host mode network.
+ - ✅ [6/6] Add new platform to builder.
+     - MTK
+     - AIOS7.0
+ - ✅ [6/7] Detect if toolchains are installed when create container.
+ - ✅ [6/8] Add package "tree" on smart4 platform.
