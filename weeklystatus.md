@@ -20,7 +20,9 @@
      - ✅ 20550 Wrong encryption information is displayed for clients behind a repeater. (Joe) 218487876
      - ✅ 20579 [IVA4][GUI] Optimization of the change request smart 3 2022-1255 (Ben) 72e585f1b
      - ✅ 20581 [USB Tethering] The GUI hangs up during the fallback from the cellular network to DSL (Mia) 6cf3bc205
-     - 📌 20226 [Smart3 HDSM14] sysfs reports wrong speeds for Gigabit Ethernet connections
+         - ✅ [06/15] acba0a6 [Smart3][GUI][HPQC/20581] an error message displays after a timeout of 30 seconds from the cellular network to DSL by Mia
+         - ✅ [06/15] 1d10e01 [Smart3][GUI][HPQC/20581] an error message displays after a timeout of 30 seconds from the cellular network to DSL .. cont by Mia
+     - 📌 20226 [Smart3 HDSM14] sysfs reports wrong speeds for Gigabit Ethernet connections 
      - 📌 20560 [HDSM][ARC][Smart 3 Drop 25] CC_GetMeshStaInfo failure , unknown MAC
      - 📌 20580 [HDSM][ARC][Smart3] Connected devices via Wifi are not shown in Assia GUI
      - ✅ 20583 [HDSM][ARC][Smart 3 HDSM18] Serial number mismatch between CC_GetMeshDevice and CC_GetCpeInfo (Joe) 21c049dab 3cb26b09a
@@ -31,19 +33,22 @@
 - Hybrid reorder fine tune
     - 🟢 [05/23] habond.c kernel module study
        - ✅ [06/09] skb buffer flow in RX direct - from dev to gre_reorder
-       - 📌 [06/09] skb buffer flow in TX direct
+       - ✅ [06/16] skb buffer flow in TX direct (IPv6/IPv4)
        - ✅ [06/09] What's RCU (Read-Copy-Update) ?
        - ✅ [06/09] gre_reorder() tracing
-       - 🟢 [06/09] reorder_buffer_timeout_handler() and reorder_buffer_calculate_timeout() tracing
+       - ✅ [06/15] reorder_buffer_timeout_handler() and reorder_buffer_calculate_timeout() tracing
+
+    - 🟢 [06/16] backup sequence num in ring when timeout and dump via proc file
+       - ✅ [06/15] implementation is finish.
+       - 🟡 Wait for the test result by CL.
 
     - some other possible enhancements
-       - 📌 tripple defined of ""struct gre_o_seqno", move to net/ip_tunnels.h??
-       - 📌 During getting configure items, tid data type is "int", it SHOULD be "void *"!?
+       - ✅ [06/16] tripple definition of ""struct gre_o_seqno" in multiple c files, move to include/net/ip_tunnels.h
+       - ✅ [06/15] During getting configure items, tid data type is "int", it SHOULD be "void *"!?
+	   - ✅ [06/15] fix some compiling warning.
        - 📌 rcu_read_lock/rcu_read_unlock, hook function pointer update with lock
 
-
 - Busybox upgrade to 1.35.0
-
     - ✅ build S4 Plus engineer firmware requested by CL (done)
     - 🟡 [05/16] Under testing by CL
        - ✅ [06/01] Activated SIP in Router mode, then switch to DSL modem mode, there are lots of "waitting for arc-sip ready" and could not reset to default. The upgradion should not be a factor to cause this problem.
