@@ -71,76 +71,55 @@
 ## GRV9519ZWAX44-B-23 (Smart 4 plus)
 
 - Produce Smart 4 Plus with 6715X
-    - 📌 [6/10] Provide master file for sample run 2
-
+    - ✅ [6/10] Provide master file for sample run 2
+    	- Keep using original DECT FW version (04.13_B1706) because Smart 4 Plus is in MP state
 - ErP issues are encountered in the DT lab (GPON and xDSL)
     - 📌 Provide the ErP measurement results for DT review
-
 - Reboot issue
     - 🟡 DUT reboot when performing the ppp link up and link down repeatedly.
         - Change sleep time to 10 sec in the arc_email_push_system_report.sh, then this issue isn't observed.
-
 - Sometimes iptables rules are missing
     - 🟡 Study the solutions from git.netfilter.org
-
-- Issue report from factory
-    - ✅ Fail to get the DECT firmware version
-        - DECT firmware update is triggered after the firmware of DUT was updated from shipping fw to MFG fw. We can get the DECT firmware version after the DECT firmware update is finished. (5 min)
-        - To save time, the alignment of DECT firmware version in EEPROM, MFG fw and shipping fw is necessary. (It is under discussion with PM.)
-
-- Issues report in 2.6.000.0-RC1 from EIT
-    - 🟢 Homepod mini deauth from AP every hour
-        - This issue isn't observed if we change the config value of WPA_GroupRekey from 3600 to 0.
+- Issues report in 2.6.000.0 (21.2p1 + 43684 chip) from EIT
     - 🟢 Error message: rdd dhd helper: release of not allocated SKB: idx=544, ptr=1287
+    	- Test setup: Five RE connects to GW, then some WLAN clients connect to GW or RE.
+    	- This message is shown about 3 times in 10 days. Reopen CS00010013691 ?
+    - 🟢 WLAN client can ping www.google.com, but it cannot browse video via YouTube
+    	- This issue isn't observed if the flow cache and HW Acceleration are disabled.
+- Issue report from Benedikt
+	- 🟢 Unable to handle kernel paging request at virtual address ffffffc13ea9cfff
+		- PC is at free_block+0x110/0x178
+	- ✅ Failed to upgrade firmware via web UI
+		- It is caused by memory leak (owl and arc-sip)
+- ✅ Release 2.6.000.0
+- ✅ Provide 3.0.000.0-RC2 to EIT
 
 ### Formal release
-
-- [6/13] 2.6.000.0
-    - [5/30] 2.6.000.0-RC1
-    - ✅ [6/08] Provide 2.6.000.0 formal firmware to EIT
-    :::info
-    Scope List
-- ✅ New WiFi driver 21.2P1 (RC1)
-- Final power table for 6715x samples
-    - 🟡 The final power table is available after the certification is finished.
-    :::
-
 - [7/04] 3.0.000.0
-    - [5/31] 3.0.000.0-RC1 (DT asked us to have RC1 next week for test in benchmark lab.)
-    - 🟢 [6/13] 3.0.000.0-RC2
-    :::info
-    Scope List
-- 🟢 New UI simulation 2.19.198
-- ✅ CR 22-1275 Start the integrated iPerf3 server via Display V2
-- 🟢 CR Smart Home changes in UI
-- 📌 New user manual
-- 🟢 20341 [BQFN] Unexpected reboot of HG in long term test setups
-- ✅ 20443 [IPPBX] Missing audion during incoming calls due to false transfer of sdp of internal SIP client in 18x
-- 🟢 20495 [IVA4][SIP] NIMS: Route Header / Service Route Smart 4
-- 📌 20510 [IPPBX] IPPBX CSeq handling in multi dialog call not correctly
-- ✅ 20554 [IPPBX] RTP of 1st dlg not transferred to IPPBX extension after switch back from 2nd dlg-LAN
-- 📌 20557 [IPPBX] Internal call transfer to or from IPPBX extension does not work (BT-029)
-- ✅ 20576 [GUI] Incorrect WAN port status in mini UI while using xDSL modem mode
-- ✅ 20595 [BQFN] IPv6 prefix change impact LAN to WAN traffic (RC1)
-- ✅ 20596 [BQFN] RTT impact and throughput drops on LAN port 2 (RC1)
-- 🟢 20582 Smart 4 (type A and B): No outgoing telephony when 1st number is deactivated (BT-030/NIMIC-0018112362)
-- 🟢 20302 [Multicast Forwarding] Multicast packets are not forwarded if the router uses GPON for WAN access
-- ✅ 20457 [HDSM][ARC][SMART4 PLUS] Agent on connected MESH repeater is killed during backhaul changes
-- IPTV benchmark:
-    - Optimization/implementation changes to be defined
-    - Optional: TACKM activation for all customers (to be discussed)
-    :::
+	- 🟢 New UI simulation 2.19.198
+	- ✅ CR 22-1275 Start the integrated iPerf3 server via Display V2
+	- 🟢 CR Smart Home changes in UI
+	- ✅ New user manual
+	- 🟢 20341 [BQFN] Unexpected reboot of HG in long term test setups
+	- ✅ 20443 [IPPBX] Missing audion during incoming calls due to false transfer of sdp of internal SIP client in 18x
+	- 🟢 20495 [IVA4][SIP] NIMS: Route Header / Service Route Smart 4
+	- 📌 20510 [IPPBX] IPPBX CSeq handling in multi dialog call not correctly
+	- ✅ 20554 [IPPBX] RTP of 1st dlg not transferred to IPPBX extension after switch back from 2nd dlg-LAN
+	- ✅ 20576 [GUI] Incorrect WAN port status in mini UI while using xDSL modem mode
+	- ✅ 20595 [BQFN] IPv6 prefix change impact LAN to WAN traffic (RC1)
+	- ✅ 20596 [BQFN] RTT impact and throughput drops on LAN port 2 (RC1)
+	- 🟢 20582 Smart 4 (type A and B): No outgoing telephony when 1st number is deactivated (BT-030/NIMIC-0018112362)
+	- 🟢 20302 [Multicast Forwarding] Multicast packets are not forwarded if the router uses GPON for WAN access
+	- ✅ 20457 [HDSM][ARC][SMART4 PLUS] Agent on connected MESH repeater is killed during backhaul changes
 
 - [8/01] 3.0.001.0
-    - Scope to be defined
+	- 📌 20557 [IPPBX] Internal call transfer to or from IPPBX extension does not work (BT-029)
+
 
 ## VRV9517WAX44 1-B-23 (Smart 4 Typ A)
 
 - Reboot issue
     - 🟡 The HW reboot happened when performing the ADSL link up/down test every 2 minutes.
-
-- Voice Redundancy
-    - ✅ Firewall also accept VoIP packets from LTE WAN (eth0.0) interface.
 
 ## VRV9517WAX44-1-B-23: Typ B (Smart4 TypeB)
 
@@ -150,10 +129,8 @@
 
 ## VRV9517ZWAX34-A-SP (Spark)
 
-## VRV9518baax24b2g (OTE)
-
-- ✅ [JIRA 9518B-23] Clients connected to 5G Guest AP cannot forward WAN traffic
-    - This issue isn't observed if the flow cache is disabled.
+## WA7374442-TS (Telus Boost2.1)
+- 🟢 Remove WAN from bridge interface
 
 ## Smart 5
 
