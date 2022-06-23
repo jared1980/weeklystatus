@@ -230,21 +230,17 @@
 
 ## WN9722OAX22-DM (AIOS7.0)
 
- - 🚫 [6/7] Update firmware via SP-flash-tool.
  - 🟢 [6/7] Study document and review git commit log.
  - 🟢 [6/14] Test all script by commands of AIOS6.5.
- - ✅ [6/14] Create git repo of AIOS seris on gitea server.
-     - AIOS6.5 : Follow and update with codebase provided by Wind.
-     - AIOS7.0 : Trace codebase provided by MTK and our develop.
- - ✅ [6/14] Setup FW upload environment and load FW.
- - ✅ [6/14] Create project "DENON AIOS7.0" and new "AIOS7.0 info" on confluence. 
+ - 🟢 [6/14] Create git repo of AIOS seris on gitea server.
+     - ✅ AIOS6.5 : Follow and update with codebase provided by Wind. (Including history)
+     - 🟡 AIOS7.0 : Trace codebase provided by MTK and our develop.
+ - ✅ [6/20] Discuss whole test plan with Edison.
+ - 🟢 [6/20] Check difference of AIOS6.5 / AIOS7.0 (partition, uboot, little kernel, fastboot, adb...)
 
 ## Common
 
 ### Docker builder maintain and enhance
-
- - ✅ [6/14] Fix smart4 platform "zlib" multi-version problem.
- - ✅ [6/14] Let builder can be executed anywhere not only in builder folder.
 
 ## Archived
 ### 20222H
@@ -331,7 +327,7 @@ The busybox has reported with 14 new vulnerabilities. W724 uses busybox 1.16.2 t
 
 ##### WN9722OAX22-DM (AIOS7.0)
 
- - ✅ [6/7] Try to build code.
+ - ✅ [6/14] Create project "DENON AIOS7.0" and new "AIOS7.0 info" on confluence.
 
 ##### Common
 
@@ -345,4 +341,6 @@ The busybox has reported with 14 new vulnerabilities. W724 uses busybox 1.16.2 t
      - MTK
      - AIOS7.0
  - ✅ [6/7] Detect if toolchains are installed when create container.
- - ✅ [6/8] Add package "tree" on smart4 platform.
+ - ✅ [6/14] Fix smart4 platform "zlib" multi-version problem.
+     - New version of pip will check if there existed muti-version package, disable it.
+ - ✅ [6/14] Let builder can be executed anywhere not only in builder folder.
