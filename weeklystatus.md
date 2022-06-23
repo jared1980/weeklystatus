@@ -99,7 +99,7 @@
 ### VPN
 
     - ✅ [6/23] Don't stop xl2tpd process during wan link down event handle script.
-    - 📌 [6/22] create more than one tunnels on the smae smartphone. After connected and disconnected to server. The connection status on HG could be wrong.
+    - 📌 [6/22] create more than one tunnels on the same smartphone. After connected and disconnected to server. The connection status on HG could be wrong.
 
 ## Smart 5 (RDK)
 
