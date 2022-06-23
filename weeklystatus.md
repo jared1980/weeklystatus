@@ -117,9 +117,6 @@
 
 ## GRV9519ZWAX44-B-23 (Smart 4 plus)
 
-- Produce Smart 4 Plus with 6715X
-    - ✅ [6/10] Provide master file for sample run 2
-    	- Keep using original DECT FW version (04.13_B1706) because Smart 4 Plus is in MP state
 - ErP issues are encountered in the DT lab (GPON and xDSL)
     - 📌 Provide the ErP measurement results for DT review
 - Reboot issue
@@ -128,28 +125,28 @@
 - Sometimes iptables rules are missing
     - 🟡 Study the solutions from git.netfilter.org
 - Issues report in 2.6.000.0 (21.2p1 + 43684 chip) from EIT
-    - 🟢 Error message: rdd dhd helper: release of not allocated SKB: idx=544, ptr=1287
+    - 🟡 Error message: rdd dhd helper: release of not allocated SKB: idx=544, ptr=1287
     	- Test setup: Five RE connects to GW, then some WLAN clients connect to GW or RE.
-    	- This message is shown about 3 times in 10 days. Reopen CS00010013691 ?
+    	- Will reopen CS00010013691 after below issue is fixed.
     - 🟢 WLAN client can ping www.google.com, but it cannot browse video via YouTube
     	- This issue isn't observed if the flow cache and HW Acceleration are disabled.
+    	- CSP CS00012250548 is created and BRCM is looking into it.
 - Issue report from Benedikt
-	- 🟢 Unable to handle kernel paging request at virtual address ffffffc13ea9cfff
+	- 🟡 Unable to handle kernel paging request at virtual address ffffffc13ea9cfff
 		- PC is at free_block+0x110/0x178
-	- ✅ Failed to upgrade firmware via web UI
-		- It is caused by memory leak (owl and arc-sip)
-- ✅ Release 2.6.000.0
-- ✅ Provide 3.0.000.0-RC2 to EIT
+- 🟢  Prepare 3.0.000.0-RC3 and provide to EIT on 6/27
 
 ### Formal release
 - [7/04] 3.0.000.0
 	- 🟢 New UI simulation 2.19.198
 	- ✅ CR 22-1275 Start the integrated iPerf3 server via Display V2
-	- 🟢 CR Smart Home changes in UI
-	- ✅ New user manual
-	- 🟢 20341 [BQFN] Unexpected reboot of HG in long term test setups
+	- 🟢 CR 22-1253 Smart Home changes in UI
+	- ✅ New user manual (version: 01.06.2022)
+	- ✅ Change to environment variable to prevent ASSIA agent to open LAN side port
+	- 🚫 20341 [BQFN] Unexpected reboot of HG in long term test setups
+		- DT agreed to postpone for later release.
 	- ✅ 20443 [IPPBX] Missing audion during incoming calls due to false transfer of sdp of internal SIP client in 18x
-	- 🟢 20495 [IVA4][SIP] NIMS: Route Header / Service Route Smart 4
+	- ✅ 20495 [IVA4][SIP] NIMS: Route Header / Service Route Smart 4
 	- 📌 20510 [IPPBX] IPPBX CSeq handling in multi dialog call not correctly
 	- ✅ 20554 [IPPBX] RTP of 1st dlg not transferred to IPPBX extension after switch back from 2nd dlg-LAN
 	- ✅ 20576 [GUI] Incorrect WAN port status in mini UI while using xDSL modem mode
@@ -177,11 +174,17 @@
 ## VRV9517ZWAX34-A-SP (Spark)
 
 ## WA7374442-TS (Telus Boost2.1)
-- 🟢 Remove WAN from bridge interface
+- ✅ Remove WAN from bridge interface
+- 📌 Service blocking list
+- 📌 DoS protection
+- 📌 DMZ
+- 📌 Port Forwarding
+- 📌 Port triggering
+- 📌 NAT
 
-## Smart 5
+## DT-EU
 
-- wanManager
+- 📌 wanManager study
 
 # Terry
 
