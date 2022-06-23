@@ -19,7 +19,7 @@
      - ✅ [6/22] Fix GUI may hang if tethering is disabled during count down to tethering.
 
 - 5.0.001.1 (scheduled on 18/July)
-
+     - ✅ [6/23] RC1~3 prepared
      - ✅ 20520 [SIP] CSeq number increased not within dialog but over all dialogs (adia) 23f0fdefb
      - ✅ 20549 A very unusual time stamp appears under Network / Mesh settings / Problem handling / Restart. (Mia) f3eda9fab
      - ✅ 20550 Wrong encryption information is displayed for clients behind a repeater. (Joe) 52464f6dd 218487876
@@ -90,21 +90,18 @@
 ### HPQC
 	- [HPQC 20290/20291/20292][BBTC][Data] In case the VoIP functionality is deactivated the "Active Services"-list is not updated immediately (reboot necessary)
 		- 🟢 [06/16] arc-sip closed udp socket, but netstat still listed it. possible way to speed up the reclaiming of closed port ? Answer: no way to speed up
-		- 🚫 [6/21] could not reproduce anymore...
+		- 🚫 [6/21] could not reproduce anymore
 
 ### Tethering
-
     - ✅ [6/23] Fix GUI may hang if tethering is disabled during count down to tethering.
 
 ### VPN
-
     - ✅ [6/23] Don't stop xl2tpd process during wan link down event handle script.
     - 📌 [6/22] create more than one tunnels on the same smartphone. After connected and disconnected to server. The connection status on HG could be wrong.
 
 ## Smart 5 (RDK)
 
 ### Tethering
-
     - 🟡 study how to fit in the LTE dongle status pulling/notifying
 
 
