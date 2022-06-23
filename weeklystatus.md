@@ -152,16 +152,18 @@
   - ✅ (W24) New OpenWrt package in Arcadyan-utilities with shared library way.
     - ✅ (W24) Generate a shared library.
     - ✅ (W24) Link a shared library.
-  - 🟢 (W24) Fix segment fault issue.
-    - 🟢 (W24) Find the caused reason.
-    - 📌 Add -v verbose optional argument.
-    - 📌 Add UDP packet check.
-    - 📌 Add packet size check.
+  - ✅ (W24) Fix segment fault issue.
+    - ✅ (W24) Find the caused reason.
+    - ✅ (W25) Add -v verbose optional argument.
+    - ✅ (W25) Add UDP packet check.
+    - ✅ (W25) Add packet size check.
+  - ✅ (W25) Push commit to Git server.
 
 
 
 - Develop DHCP Client API - trim busybox udhcpc program
-  - 📌 Confirm if the program works properly.
+  - ✅ Confirm if the program works properly.
+  - ✅ (W25) Push commit to Git server.
   
 
 
@@ -171,6 +173,8 @@
     <!-- [build system overview] https://julienjorge.medium.com/an-overview-of-build-systems-mostly-for-c-projects-ac9931494444 -->
   - ✅ (W24) Study GDB core dump file.
   - ✅ (W24) Install the GDB program in the Smart4 device via TFTP.
+  - ✅ (W25) Study Git manipulation. (e.g. push, pull, rebase, merge, format-patch, ...)
+  - 🟢 (W25) Study the firewall background knowledge. ( e.g. chain, table, traffic rule, ...)
 
 
 
@@ -207,6 +211,7 @@
     - ✅ [05/24] Fixed by adding more signature algorithms for TLS 1.3.
 
 #####
+
  - 20079 [BBTC][VPN][Internet-Access] When triggering IP address change by an connected VPN client (Wireguard) the Speedport does not come back online
  - 20122 The Router can be incapacitated via a VPN connection
 
@@ -233,23 +238,49 @@ The busybox has reported with 14 new vulnerabilities. W724 uses busybox 1.16.2 t
 - [JIRA 24398-22][Moderate] Existed IPv4 traffic didn't stop when connected client entered blocked time of MAC filter.
 - LAN client cannot establish PPTP tunnel to server if the GRE Learning are enabled.
 
+
+
+---
+
 #### Terry
 
-##### GRV9519ZWAX44-B-23 (Smart 4 plus)
+> The naming rule of the archive shows below: 
+> **\[\<category\>\]\[\<module\>\]** 
 
-- Develop an application to catch DHCP option content. ( especially DHCP option 43 )
+
+
+#####  Smart 4 plus
+
+>GRV9519ZWAX44-B-23
+
+
+
+\[Feature\]\[DHCP\]
+
+- Catch DHCP option 43 content. 
   - Method A: standalone application way
     - (W23) New a OpenWrt package, named `arc_dhcp_option_catcher`.
     - (W23) Fix interface issue. ( add interface option to communicate with DHCP server )
+    - (W25) Push git commit 
+      `94cc671a16 [Smart4Common][DHCP] Add new application "arc_dhcp_catcher" to catch DHCP option 43 content`
   - Method B: busybox way
     - (W22) New a busybox patch, named `600-add-udhcpc-trimmed-applet.patch`, to new applet `trimmed_dhcpc`.
     - (W23) Fix interface issue. ( add interface option to communicate with DHCP server )
+    - (W25) Push git commit 
+      `8beaeb70b0 [Smart4Common][busybox/udhcpc] Add busybox applet to catch DHCP option 43 content`
 
 
 
-- Busybox
-  - (W23) Replace the overwrite way with the patch way in the busybox package.
-    <!--p.s. overwrite way does copy all files in `package/busybox/src.dt` folder to `build-dir/target*/busybox-*/`-->
+\[Mechanism\]\[Busybox\]
+
+- (W23) Replace the overwrite way with the patch way in the busybox package.
+  <sub>overwrite way is copying all files from `package/busybox/src.dt` folder to `build-dir/target*/busybox-*/`</sub>
+  - (W23) New a busybox patch, named `601-replace-src.dt.patch`
+  
+
+
+
+---
 
 #### Goat
 
