@@ -6,13 +6,11 @@
 
 ### Tethering
 
-- ✅ [6/22] Add support for more rndis_host device, e.g., HTC M8
-- ✅ [6/22] Fix GUI may hang if tethering is disabled during count down to tethering.
-
 ### Firmware release
 
 - 5.0.001.1 (scheduled on 18/July)
      - ✅ [6/23] RC1~3 prepared
+     - ✅ [6/27] RC4 prepared
      - ✅ 20520 [SIP] CSeq number increased not within dialog but over all dialogs (adia) 23f0fdefb
      - ✅ 20549 A very unusual time stamp appears under Network / Mesh settings / Problem handling / Restart. (Mia) f3eda9fab
      - ✅ 20550 Wrong encryption information is displayed for clients behind a repeater. (Joe) 52464f6dd 218487876
@@ -28,10 +26,13 @@
          - ✅ [6/21] ae36617 - [Smart3][CloudCheck] Add version in CC_GetEthInterfaceInfo (3 weeks ago) <Bryant_Yeh>
      - ✅ 20560 [HDSM][ARC][Smart 3 Drop 25] CC_GetMeshStaInfo failure , unknown MAC
          - ✅ [6/21] 8ebd324 - [Smart3][CloudCheck][HPQC:20560]CC_GetMeshStaInfo failure , unknown MAC (4 weeks ago) <louis_wang>
+   	     - ✅ [6/27] 09cdac5 [Smart3][CloudCheck][HPQC:20560]CC_GetMeshStaInfo failure , unknown MAC - cont
      - ✅ 20580 [HDSM][ARC][Smart3] Connected devices via Wifi are not shown in Assia GUI
          - ✅ [6/21] 734051d - [Smart3][CloudCheck]Close file lock fd when timed out occur while accessing the lock. (4 weeks ago) <louis_wang>
          - ✅ [6/21] 17374b9 - [Smart3][OWL] Sometime the "/tmp/owl/station" file cannot produce, because using the unmatch file lock description file. (4 weeks ago) <joe_lee>
          - ✅ [6/21] e722d1d - [Smart3][OWL] Fix some client station on /tmp/owl/station doesn't have ip. (11 days ago) <joe_lee>
+         - ✅ [6/27] 1b39102  [Smart 3][OWL] About this patch 8e1fbd77a using an error pclist attribute, I change the attribute to PCLIST_ATTR_DHCP_CLT for ethernet static ip.
+         - ✅ [6/27] 8e1fbd7 [Smart 3][OWL] When client use ethernet static ip, OWL to get static ip by pclist.
      - ✅ 20583 [HDSM][ARC][Smart 3 HDSM18] Serial number mismatch between CC_GetMeshDevice and CC_GetCpeInfo (Joe) 21c049dab 3cb26b09a
      - ✅ CR 22-1285 Smart 3 New PDF User Manual (20220511) 3acf220e9
      - ✅ 20602 DTCC-313 [HDSM][ARC][Smart3] CC_GetMeshStaInfo may incorrectly report stations as unauthorized/unauthenticated
@@ -52,47 +53,29 @@
 
 ## GRV9519ZWAX44-B-23 (Smart 4 plus)
 
-- Hybrid reorder fine tune
-    - 🟢 [05/23] habond.c kernel module study
-       - ✅ [06/09] skb buffer flow in RX direct - from dev to gre_reorder
-       - ✅ [06/16] skb buffer flow in TX direct (IPv6/IPv4)
-       - ✅ [06/09] What's RCU (Read-Copy-Update) ?
-       - ✅ [06/09] gre_reorder() tracing
-       - ✅ [06/15] reorder_buffer_timeout_handler() and reorder_buffer_calculate_timeout() tracing
-       - ✅ [06/15] Documentation https://arc-conf.arcadyan.com.tw/display/0911866010/package+flow
+### Security
+	- 🟡 Busybox upgrade to 1.35.0
+		- ✅ build S4 Plus engineer firmware requested by CL (done)
+		- 🟡 [05/16] Under testing by CL
 
-    - 🟢 [06/16] backup sequence num in ring when timeout and dump via proc file
-       - ✅ [06/15] implementation is finish.
-       - 🚫 Wait for the test result by CL.
-       - 🚫 [6/22] case closed due to function already exist.
-
-    - some other possible enhancements
-       - ✅ [06/16] tripple definition of ""struct gre_o_seqno" in multiple c files, move to include/net/ip_tunnels.h
-       - ✅ [06/15] During getting configure items, tid data type is "int", it SHOULD be "void *"!?
-	   - ✅ [06/15] fix some compiling warning.
-       - 📌 rcu_read_lock/rcu_read_unlock, hook function pointer update with lock
-
-- Busybox upgrade to 1.35.0
-    - ✅ build S4 Plus engineer firmware requested by CL (done)
-    - 🟡 [05/16] Under testing by CL
-       - ✅ [06/01] Activated SIP in Router mode, then switch to DSL modem mode, there are lots of "waitting for arc-sip ready" and could not reset to default. The upgradion should not be a factor to cause this problem.
-       - ✅ [06/06] Smart 4 Plus: finished. all looking good.
-       - 🟢 [06/06] Smart 4 MS: conducting
+### Active Service
+	- ✅ [06/01] Activated SIP in Router mode, then switch to DSL modem mode, there are lots of "waitting for arc-sip ready" and could not reset to default. The upgradion should not be a factor to cause this problem.
+		- ✅ [06/06] Smart 4 Plus: finished. all looking good.
+		- 🟢 [06/06] Smart 4 MS: conducting
 
 ## VRV9517WAX44 1-B-23 (Smart 4 MS)
+
 ### HPQC
 	- [HPQC 20290/20291/20292][BBTC][Data] In case the VoIP functionality is deactivated the "Active Services"-list is not updated immediately (reboot necessary)
 		- 🟢 [06/16] arc-sip closed udp socket, but netstat still listed it. possible way to speed up the reclaiming of closed port ? Answer: no way to speed up
 		- 🚫 [6/21] could not reproduce anymore
 
 ### Tethering
-    - ✅ [6/23] Fix GUI may hang if tethering is disabled during count down to tethering.
 
 ### VPN
-    - ✅ [6/23] Don't stop xl2tpd process during wan link down event handle script.
     - 📌 [6/22] create more than one tunnels on the same smartphone. After connected and disconnected to server. The connection status on HG could be wrong.
 
-## Smart 5 (RDK)
+## VRV9517WAX44 2-B-H2-23 (Smart 5/RDK)
 
 ### Tethering
     - 🟡 study how to fit in the LTE dongle status pulling/notifying
