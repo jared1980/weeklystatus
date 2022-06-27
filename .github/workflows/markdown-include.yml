@@ -22,13 +22,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: echo "Weekly status of Protocol Team - `date +"CW%U, %Y"`" > ./docs/header.md
 
     - name: merge md include files
     - uses: actions/setup-node@v3
       with:
         node-version: 14
     - run: npm install markdown-include
+    - run: echo "Weekly status of Protocol Team - `date +"CW%U, %Y"`" > ./docs/header.md
     - run: node_modules/markdown-include/bin/cli.js markdown.json
 
     - name: Commit merge changes
