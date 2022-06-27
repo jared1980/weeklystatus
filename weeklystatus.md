@@ -1,22 +1,15 @@
-📌 : ToDo
-🔴 : critical
-🟢 : ongoing
-🟡 : pending
-🚫 : canceled
-✅ : finished
-
 # Jared
 
 ## W724
 
 ## Smart 3
 
+### Tethering
+
+- ✅ [6/22] Add support for more rndis_host device, e.g., HTC M8
+- ✅ [6/22] Fix GUI may hang if tethering is disabled during count down to tethering.
+
 ### Firmware release
-
-- Tethering
-
-     - ✅ [6/22] Add support for more rndis_host device, e.g., HTC M8
-     - ✅ [6/22] Fix GUI may hang if tethering is disabled during count down to tethering.
 
 - 5.0.001.1 (scheduled on 18/July)
      - ✅ [6/23] RC1~3 prepared
@@ -103,7 +96,6 @@
 
 ### Tethering
     - 🟡 study how to fit in the LTE dongle status pulling/notifying
-
 
 # Sophia
 
@@ -218,11 +210,6 @@
   - ✅ (W25) Study Git manipulation. (e.g. push, pull, rebase, merge, format-patch, ...)
   - 🟢 (W25) Study the firewall background knowledge. ( e.g. chain, table, traffic rule, ...)
 
-
-
-
-
-
 # Goat
 
 ## WN9722OAX22-DM (AIOS7.0)
@@ -239,59 +226,49 @@
 
 ### Docker builder maintain and enhance
 
-## Archived
-### 20222H
-#### Jared
 
-##### GRV9519ZWAX44-B-23 (Smart 4 plus)
- - email notification failure with port 465 with commit 2f43cb5
-    - 📌 [05/19] reported by CL
-    - ✅ [05/24] Fixed by adding more signature algorithms for TLS 1.3.
+# Archived - 2022H2
+## Jared
 
-#####
+### GRV9519ZWAX44-B-23 (Smart 4 plus)
+	- email notification failure with port 465 with commit 2f43cb5
+		- 📌 [05/19] reported by CL
+		- ✅ [05/24] Fixed by adding more signature algorithms for TLS 1.3.
 
- - 20079 [BBTC][VPN][Internet-Access] When triggering IP address change by an connected VPN client (Wireguard) the Speedport does not come back online
- - 20122 The Router can be incapacitated via a VPN connection
+#### HPQC
+	- 20079 [BBTC][VPN][Internet-Access] When triggering IP address change by an connected VPN client (Wireguard) the Speedport does not come back online
+	- 20122 The Router can be incapacitated via a VPN connection
+   > When "Change IP address" pressed, browser send "disable" and "online" to CGI. But "online" never reach httpd due to Internet is disconnected.
 
-When "Change IP address" pressed, browser send "disable" and "online" to CGI. But "online" never reach httpd due to Internet is disconnected.
+### W724
+	- Busybox CVE issues
+   > The busybox has reported with 14 new vulnerabilities. W724 uses busybox 1.16.2 that was affected by 4. But the applet hash was not compiled and installed. Therefore, we need to fix 3 vulnerabilities which are CVE-2021-42378/42385/42386. They are all releated to awk. So porting 1.34.0 awk to busybox
 
-##### W724
- - Busybox CVE issues
+## Sophia
 
-The busybox has reported with 14 new vulnerabilities. W724 uses busybox 1.16.2 that was affected by 4. But the applet hash was not compiled and installed. Therefore, we need to fix 3 vulnerabilities which are CVE-2021-42378/42385/42386. They are all releated to awk. So porting 1.34.0 awk to busybox
-
-#### Sophia
-
-##### VRV9519XWAC44 3-B-23 (Smart 3)
+### VRV9519XWAC44 3-B-23 (Smart 3)
 - Disable OpenWrt failsafe mode
 
-##### GRV9519ZWAX44-B-23 (Smart 4 plus)
+### GRV9519ZWAX44-B-23 (Smart 4 plus)
 - Disable OpenWrt failsafe mode
 - Don't install the dropbear binary in the firmware
 - Issues reported from factory
     - Provide the explanation for the Display, LED and UI behavior when user hasn't enter ppp setting and he can access the Internet.
     - Get PHY ID failed (0x0000) after the PDL is executed
 
-##### VRV9517ZWAX34-A-SP (Spark)
+### VRV9517ZWAX34-A-SP (Spark)
 - [JIRA 24398-22][Moderate] Existed IPv4 traffic didn't stop when connected client entered blocked time of MAC filter.
 - LAN client cannot establish PPTP tunnel to server if the GRE Learning are enabled.
 
-
-
----
-
-#### Terry
+## Terry
 
 > The naming rule of the archive shows below: 
 > **\[\<category\>\]\[\<module\>\]** 
 
 
-
-#####  Smart 4 plus
+###  Smart 4 plus
 
 >GRV9519ZWAX44-B-23
-
-
 
 \[Feature\]\[DHCP\]
 
@@ -307,28 +284,21 @@ The busybox has reported with 14 new vulnerabilities. W724 uses busybox 1.16.2 t
     - (W25) Push git commit 
       `8beaeb70b0 [Smart4Common][busybox/udhcpc] Add busybox applet to catch DHCP option 43 content`
 
-
-
 \[Mechanism\]\[Busybox\]
 
 - (W23) Replace the overwrite way with the patch way in the busybox package.
   <sub>overwrite way is copying all files from `package/busybox/src.dt` folder to `build-dir/target*/busybox-*/`</sub>
   - (W23) New a busybox patch, named `601-replace-src.dt.patch`
-  
 
+## Goat
 
-
----
-
-#### Goat
-
-##### WN9722OAX22-DM (AIOS7.0)
+### WN9722OAX22-DM (AIOS7.0)
 
  - ✅ [6/14] Create project "DENON AIOS7.0" and new "AIOS7.0 info" on confluence.
 
-##### Common
+### Common
 
-###### Docker builder maintain and enhance
+#### Docker builder maintain and enhance
 
  - ✅ [6/6] Review git commit log.
  - ✅ [6/6] Delete duplicate path in commands.
@@ -341,3 +311,4 @@ The busybox has reported with 14 new vulnerabilities. W724 uses busybox 1.16.2 t
  - ✅ [6/14] Fix smart4 platform "zlib" multi-version problem.
      - New version of pip will check if there existed muti-version package, disable it.
  - ✅ [6/14] Let builder can be executed anywhere not only in builder folder.
+
