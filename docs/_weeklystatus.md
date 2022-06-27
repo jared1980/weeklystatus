@@ -1,3 +1,6 @@
+#include "docs/header.md"
+#include "docs/indicator.md"
+
 #include "docs/jared.md"
 #include "docs/sophia.md"
 #include "docs/terry.md"

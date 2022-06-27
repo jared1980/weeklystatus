@@ -22,6 +22,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: generate header for weeklystatus.md
+    - run: ./scripts/header.sh
+
+    - name: merge md include files
     - uses: actions/setup-node@v3
       with:
         node-version: 14
@@ -34,4 +39,4 @@ jobs:
         author_name: markdown-include
         author_email: markdown-include@example.com
         message: "markdown-include CI"
-        add: 'weeklystatus.md'
+        add: 'weeklystatus.md docs/header.md'
