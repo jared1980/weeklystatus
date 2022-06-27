@@ -15,7 +15,7 @@
 git clone git@github.com:jared1980/weeklystatus.git
 ```
 
-    5. Update weekly report with your favor editor.
+    5. Update weekly report in docs/your_name.md with your favor editor.
 
     6. sync to remote
 

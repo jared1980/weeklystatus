@@ -1,0 +1,7 @@
+{
+	"build" : "weeklystatus.md",
+	"files" : ["./docs/_weeklystatus.md"],
+	"tableOfContents": {
+		"heading": "# Table of Contents"
+	}
+}
