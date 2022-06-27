@@ -1,3 +1,17 @@
+Weekly status of Protocol Team - CW26, 2022
+
+# States
+| Icon | State    |
+|------|----------|
+| 📌   | ToDo     |
+| 🔴   | Critical |
+| 🟢   | Ongoing  |
+| 🟡   | Pending  |
+| 🚫   | Canceled |
+| ✅   | Finished |
+
+
+
 # Jared
 
 ## W724
