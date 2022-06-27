@@ -22,12 +22,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
-    - name: merge md include files
     - uses: actions/setup-node@v3
       with:
         node-version: 14
     - run: npm install markdown-include
+    - run: sh ./scripts/header.sh
     - run: node_modules/markdown-include/bin/cli.js markdown.json
 
     - name: Commit merge changes
