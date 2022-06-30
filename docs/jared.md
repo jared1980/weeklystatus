@@ -2,7 +2,7 @@
 
 ## W724
 
-## Smart 3
+## VRV9519XWAC44 3-B-23 (Smart 3)
 
 ### Tethering
 
@@ -54,14 +54,11 @@
 ## GRV9519ZWAX44-B-23 (Smart 4 plus)
 
 ### Security
-	- 🟡 Busybox upgrade to 1.35.0
-		- ✅ build S4 Plus engineer firmware requested by CL (done)
-		- 🟡 [05/16] Under testing by CL
-
-### Active Service
-	- ✅ [06/01] Activated SIP in Router mode, then switch to DSL modem mode, there are lots of "waitting for arc-sip ready" and could not reset to default. The upgradion should not be a factor to cause this problem.
-		- ✅ [06/06] Smart 4 Plus: finished. all looking good.
-		- 🟢 [06/06] Smart 4 MS: conducting
+ - 🟡 Busybox upgrade to 1.35.0
+   - ✅ build S4 Plus engineer firmware requested by CL (done)
+   - ✅ [06/01] Activated SIP in Router mode, then switch to DSL modem mode, there are lots of "waitting for arc-sip ready" and could not reset to default. The upgradion should not be a factor to cause this problem.
+   - ✅ [06/06] Smart 4 Plus: finished. all looking good.
+   - 🟢 [06/06] Smart 4 MS: conducting
 
 ## VRV9517WAX44 1-B-23 (Smart 4 MS)
 
@@ -73,9 +70,19 @@
 ### Tethering
 
 ### VPN
-    - 📌 [6/22] create more than one tunnels on the same smartphone. After connected and disconnected to server. The connection status on HG could be wrong.
+ - 📌 [6/22] create more than one tunnels on the same smartphone. After connected and disconnected to server. The connection status on HG could be wrong.
 
 ## VRV9517WAX44 2-B-H2-23 (Smart 5/RDK)
 
 ### Tethering
-    - 🟡 study how to fit in the LTE dongle status pulling/notifying
+ - Build RDK-F code
+   - 🟢 [6/28] building RDF-F with builder on build15 failure...
+     - 🔴 ccsp-eth-agent.bb
+   - ✅ [6/29] build RDK-F with rdk-factory docker
+   - 🟢 [6/30] Try to turn on some kernel modules (mii/usbnet/usbcore/cdc_ether/rndis_host/ipheth)
+ - ✅ [6/28] wanmanager policy
+      > Currently, wan manager enforces AUTOWAN_MODE policy
+ 
+      > s_xsun: actually we are defining the new DM of WanManager... I guess there will be new Policies to be supported. But to be honest I have no idea about the usb tethering now... because it is not yet supported by RDK-F at all.
+
+ - 🟡 study how to fit in the LTE dongle status pulling/notifying
