@@ -77,9 +77,9 @@ Weekly status of Protocol Team - CW26, 2022
 ## VRV9517WAX44 1-B-23 (Smart 4 MS)
 
 ### HPQC
-	- [HPQC 20290/20291/20292][BBTC][Data] In case the VoIP functionality is deactivated the "Active Services"-list is not updated immediately (reboot necessary)
-		- 🟢 [06/16] arc-sip closed udp socket, but netstat still listed it. possible way to speed up the reclaiming of closed port ? Answer: no way to speed up
-		- 🚫 [6/21] could not reproduce anymore
+ - [HPQC 20290/20291/20292][BBTC][Data] In case the VoIP functionality is deactivated the "Active Services"-list is not updated immediately (reboot necessary)
+  - 🟢 [06/16] arc-sip closed udp socket, but netstat still listed it. possible way to speed up the reclaiming of closed port ? Answer: no way to speed up
+  - 🚫 [6/21] could not reproduce anymore
 
 ### Tethering
 
@@ -89,7 +89,7 @@ Weekly status of Protocol Team - CW26, 2022
 ## VRV9517WAX44 2-B-H2-23 (Smart 5/RDK)
 
 ### Tethering
- - Build RDK-F code
+ - 🟢 Build RDK-F code
    - 🟢 [6/28] building RDF-F with builder on build15 failure...
      - 🔴 ccsp-eth-agent.bb
    - ✅ [6/29] build RDK-F with rdk-factory docker
