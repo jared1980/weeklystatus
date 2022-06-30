@@ -78,8 +78,8 @@ Weekly status of Protocol Team - CW26, 2022
 
 ### HPQC
  - [HPQC 20290/20291/20292][BBTC][Data] In case the VoIP functionality is deactivated the "Active Services"-list is not updated immediately (reboot necessary)
-  - 🟢 [06/16] arc-sip closed udp socket, but netstat still listed it. possible way to speed up the reclaiming of closed port ? Answer: no way to speed up
-  - 🚫 [6/21] could not reproduce anymore
+   - 🟢 [06/16] arc-sip closed udp socket, but netstat still listed it. possible way to speed up the reclaiming of closed port ? Answer: no way to speed up
+   - 🚫 [6/21] could not reproduce anymore
 
 ### Tethering
 
