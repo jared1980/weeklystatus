@@ -79,7 +79,7 @@
    - 🟢 [6/28] building RDF-F with builder on build15 failure...
      - 🔴 ccsp-eth-agent.bb
    - ✅ [6/29] build RDK-F with rdk-factory docker
-   - 🟢 [6/30] Try to turn on some kernel modules (mii/usbnet/usbcore/cdc_ether/rndis_host/ipheth)
+ - ✅ [6/30] Try to turn on some kernel modules (mii/usbnet/usbcore/cdc_ether/rndis_host/ipheth)
  - ✅ [6/28] wanmanager policy
       > Currently, wan manager enforces AUTOWAN_MODE policy
  
