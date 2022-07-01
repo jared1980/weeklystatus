@@ -11,3 +11,5 @@
 #include "docs/sophia-22H2.md"
 #include "docs/terry-22H2.md"
 #include "docs/goat-22H2.md"
+
+#include "docs/footer.md"
