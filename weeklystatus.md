@@ -216,8 +216,10 @@ Weekly status of Protocol Team - CW27, 2022
  - 🟢 [06/24] Find way to write broad data to specific partition.
      - 🟡 SU will provide special partition that is available in the eMMC device. (RPMB)
  - 🟢 [07/07] Prepare master file to CNC. (7/15)
+     - ✅ Prepare environment.
      - 🟢 Try whole process to create master file via AIOS6.5.
      - 🟡 SU will provide AIOS7.0 FW.
+ - 🟢 [07/07] Try script of AIOS6.5 on AIOS7.0
 
  - 🟡 [06/07] Study document and review git commit log.
  - 🟡 [06/20] Check difference of AIOS6.5 / AIOS7.0 (partition, uboot, little kernel, fastboot, adb...)
