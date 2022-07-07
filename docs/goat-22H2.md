@@ -5,6 +5,11 @@
  - [06/14] Create project "DENON AIOS7.0" and new "AIOS7.0 info" on confluence.
  - [06/20] Discuss whole test plan with Edison.
  - [06/14] Test all script by commands of AIOS6.5.
+ - [06/28] Update jira issues
+     - How and where should we write broad data.
+         - New partition will be provided by SU.
+     - What type of dual image will be implemented.
+         - SU will provide CPE like dual image machanism. 
 
 ### Common
 
