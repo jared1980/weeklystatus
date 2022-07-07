@@ -33,7 +33,7 @@ Weekly status of Protocol Team - CW27, 2022
 	> + echo ${IF_ADDR} | awk 'BEGIN {FS="."}; {print $2}'
 ### Tethering
 
- - ✅ [7/05] vlan8 dispear from release 5.0.001.0
+ - ✅ [7/05] vlan8 disappear from release 5.0.001.0
    > 5.0.001.0-r4 OKAY, 5.0.001.0-r5 NG/ commit 5715f37 - [Smart3][Tethering][DTQC/20440] The router terminates the USB tethering connection without waiting for a successful PPPoE session establishment
 
    > [7/06] Fixed and included in 5.0.001.1 RC7
