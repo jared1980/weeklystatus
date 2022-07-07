@@ -9,6 +9,7 @@
 - Issues reported from factory
     - Provide the explanation for the Display, LED and UI behavior when user hasn't enter ppp setting and he can access the Internet.
     - Get PHY ID failed (0x0000) after the PDL is executed
+- 3.0.000.0 formal release
 
 ### VRV9517ZWAX34-A-SP (Spark)
 - [JIRA 24398-22][Moderate] Existed IPv4 traffic didn't stop when connected client entered blocked time of MAC filter.
