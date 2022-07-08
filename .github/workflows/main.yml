@@ -5,7 +5,7 @@ name: Add git tag
 # Controls when the workflow will run
 on:
   schedule:
-    - cron: '8 1 * * 6'
+    - cron: '0 23 * * 6'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,15 +22,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
+      # Runs commands using the runners shell
       - name: Run a multiple lines script
         run: |
-          git config --global user.name 'Github Actions - tag'
-          git config --global user.email 'git@noreply.github.com'
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: |
+          git config --global user.name 'Jared Huang'
+          git config --global user.email 'jared_huang@arcadyan.com.tw'
           TAG_NAME=`date +"v0.%y.%U"`
           git tag ${TAG_NAME}
           git push origin --tags
