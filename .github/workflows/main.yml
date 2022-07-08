@@ -24,5 +24,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: ./scripts/add_tag.sh
+        run: |
+          git config --global user.name 'Github Actions - tag'
+          git config --global user.email 'git@noreply.github.com'
+          git tag `date +"v0.%y.%U"`
+          git push origin --tags ${process.env.GITHUB_SHA}:${process.env.GITHUB_REF}`
 
