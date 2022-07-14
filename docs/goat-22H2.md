@@ -10,6 +10,21 @@
          - New partition will be provided by SU.
      - What type of dual image will be implemented.
          - SU will provide CPE like dual image machanism. 
+ - [06/30] Prepare AIOS7.0 build code environment and try to build code.
+ - [06/14] Create git repo of AIOS seris on gitea server.
+     - AIOS6.5 : Follow and update with codebase provided by Wind. (Including history)
+     - AIOS7.0 : Trace codebase provided by MTK and our develop.
+         - Create four repo. (meta-arcadyan, set_env, script, manifest)
+         - Just trace our layer and script on gitea server not MTK's.
+         - Modify manifest in xml to clone both MTK's and ARC's code via "repo init" command.
+ - [07/01] Add and update document on confluence.
+     - Change name "Denon AIOS7.0" to "Denon AIOS series" and update info inside.
+     - Seprate AIOS6.5 / AIOS7.0 to two pages.
+     - Update "Denon AIOS6.5" document.
+     - Add "Denon AIOS7.0" document.
+     - [AIOS series](https://arc-conf.arcadyan.com.tw/pages/viewpage.action?pageId=141329089)
+     - [AIOS6.5](https://arc-conf.arcadyan.com.tw/display/0911866010/AIOS6.5)
+     - [AIOS7.0](https://arc-conf.arcadyan.com.tw/display/0911866010/AIOS7.0)
 
 ### Common
 
