@@ -1,4 +1,4 @@
-Weekly status of Protocol Team - CW27, 2022
+Weekly status of Protocol Team - CW28, 2022
 
 # States
 | Icon | State    |
@@ -254,31 +254,42 @@ Weekly status of Protocol Team - CW27, 2022
 # Goat
 
 ## WN9722OAX22-DM (AIOS7.0)
- - ✅ [06/30] Prepare AIOS7.0 build code environment and try to build code.
- - ✅ [06/14] Create git repo of AIOS seris on gitea server.
-     - ✅ AIOS6.5 : Follow and update with codebase provided by Wind. (Including history)
-     - ✅ AIOS7.0 : Trace codebase provided by MTK and our develop.
-         - ✅ Create four repo. (meta-arcadyan, set_env, script, manifest)
-         - ✅ Just trace our layer and script on gitea server not MTK's.
-         - ✅ Modify manifest in xml to clone both MTK's and ARC's code via "repo init" command.
- - ✅ [07/01] Add and update document on confluence.
-     - ✅ Change name "Denon AIOS7.0" to "Denon AIOS series" and update info inside.
-     - ✅ Seprate AIOS6.5 / AIOS7.0 to two pages.
-     - ✅ Update "Denon AIOS6.5" document.
-     - ✅ Add "Denon AIOS7.0" document.
+ - 🟢 [07/07] Design and implement architecture of AIOS7.0.
+     - ✅ Add Arcadyan's layer into image.
+     - ✅ Add package group to store recipes from Arcadyan.
  - ✅ [07/06] Create new jira ticket.
-     - ✅ Ask SU to provide some files to keep synchronize.
+     - 🟢 Ask SU to provide some files to keep synchronize.
+         - 🟢 Device tree (ensure pin mapping right)
          - 🟡 Bootloader of Little kernel (if SU modify)
-         - 🟡 Device tree (ensure pin mapping right)
          - 🟡 Flash partition (ensure we write board data in right place)
          - 🟡 Kernel config (if SU modify)
- - 🟢 [06/24] Find way to write broad data to specific partition.
-     - 🟡 SU will provide special partition that is available in the eMMC device. (RPMB)
- - 🟢 [07/07] Prepare master file to CNC. (7/15)
+     - 🟢 [06/24] Find way to write broad data to specific partition.
+         - 🟡 SU will provide special partition that is available in the eMMC device. (RPMB)
+ - 🚫 [07/07] Prepare master file to CNC. (7/15)
      - ✅ Prepare environment.
-     - 🟢 Try whole process to create master file via AIOS6.5.
-     - 🟡 SU will provide AIOS7.0 FW.
- - 🟢 [07/07] Try script of AIOS6.5 on AIOS7.0
+     - ✅ SU will provide AIOS7.0 FW.
+     - 🚫 Try whole process to create master file via AIOS6.5.
+     - 🔴 SU and Arcadyan will upgrade FW respectively after board arrived.
+ - 🟢 [07/07] Try test script on AIOS7.0.
+     - 🟡 SN/Test MAC/Test Key Write
+     - ✅ Bootup and Console Check
+     - 📌 Audio Test
+     - 🟢 I2C Test
+     - 🟢 PWM/ADC Loopback
+     - 🟢 UART Test
+     - 📌 MSDC1 Test
+     - 📌 GPIO Loopback Test
+     - 📌 HDMI TX / eARC
+     - 📌 HDMI RX
+     - 📌 USB P0, P1, P2
+     - 📌 Ethernt
+     - 📌 PHY LED / VCORE_PG
+     - 📌 PCIe
+     - 📌 PWRKEY / RESETB
+     - 📌 USB_5V Supply and 3.3V Input
+     - 📌 ADC0 - Temp Sensor check
+     - 📌 Wi-Fi radio calibration
+     - 📌 BT
 
  - 🟡 [06/07] Study document and review git commit log.
  - 🟡 [06/20] Check difference of AIOS6.5 / AIOS7.0 (partition, uboot, little kernel, fastboot, adb...)
@@ -286,8 +297,9 @@ Weekly status of Protocol Team - CW27, 2022
 ## Common
 
 ### Utility
- - ✅ [07/06] Fix cp_check bug.
-     - Status will not be updated to latest automatically if source or target branch exist on local. Result will go wrong when either branch is not latest. Add machanism to update branch to latest everytime run this script.
+ - ✅ [07/07] Fix cp_check bug.
+     - ~~Status will not be updated to latest automatically if source or target branch exist on local. Result will go wrong when either branch is not latest. Add machanism to update branch to latest everytime run this script.~~
+     - Status will not be updated to latest automatically if source or target branch exist on local. Result will go wrong when either branch is not latest. Add warning message let user know status of branch and terminate compare process.
 
 ### CCAPI
 
@@ -405,6 +417,21 @@ Weekly status of Protocol Team - CW27, 2022
          - New partition will be provided by SU.
      - What type of dual image will be implemented.
          - SU will provide CPE like dual image machanism. 
+ - [06/30] Prepare AIOS7.0 build code environment and try to build code.
+ - [06/14] Create git repo of AIOS seris on gitea server.
+     - AIOS6.5 : Follow and update with codebase provided by Wind. (Including history)
+     - AIOS7.0 : Trace codebase provided by MTK and our develop.
+         - Create four repo. (meta-arcadyan, set_env, script, manifest)
+         - Just trace our layer and script on gitea server not MTK's.
+         - Modify manifest in xml to clone both MTK's and ARC's code via "repo init" command.
+ - [07/01] Add and update document on confluence.
+     - Change name "Denon AIOS7.0" to "Denon AIOS series" and update info inside.
+     - Seprate AIOS6.5 / AIOS7.0 to two pages.
+     - Update "Denon AIOS6.5" document.
+     - Add "Denon AIOS7.0" document.
+     - [AIOS series](https://arc-conf.arcadyan.com.tw/pages/viewpage.action?pageId=141329089)
+     - [AIOS6.5](https://arc-conf.arcadyan.com.tw/display/0911866010/AIOS6.5)
+     - [AIOS7.0](https://arc-conf.arcadyan.com.tw/display/0911866010/AIOS7.0)
 
 ### Common
 
