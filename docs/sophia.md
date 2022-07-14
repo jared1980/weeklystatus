@@ -26,6 +26,7 @@
 - DECT registration for one of the Smart 4 Plus (6715x) samples is not working.
 	- ✅ The board data "DECT RFPI" is wrong. (It is correct during the MT test)
 	- 📌 When running the shipping firmware, it is not allowed to overwrite the board data of DECT RFPI, meanwhile, we will record the RFPI value if there is module attempting to overwrite it.
+	- 📌 SHOULD ALL other board data switch to RO when switching to shipping firmware?
 
 ### Formal release
 - [8/01] 3.0.001.0
@@ -49,7 +50,7 @@
 - Apply ip6tables rule failed when using 3.0.000.0 formal firmware
 	- 🟢 Sync patches relating to lock mechanism from git.netfilter.org, enable -w by default and test it.
 - There is no IPv6 RA accept rule when performing DSL and LTE up/down test
-	- ✅ arc-ipv6cp-up-firewall-cfg.sh calls ip6tables-restore command with --noflush option, so that RA rule is flushed. After that, RA rule isn't recovered anymore.
+	- ✅ arc-ipv6cp-up-firewall-cfg.sh calls ip6tables-restore command without --noflush option, so that RA rule is flushed. After that, RA rule isn't recovered anymore.
 
 ## VRV9517WAX44-1-B-23: Typ B (Smart4 TypeB)
 
@@ -67,6 +68,7 @@
 - ✅ Port Forwarding
 - 🟢 Port triggering
 - ✅ NAT
+- 📌 Integration test with GUI
 
 ## DT-EU
 
