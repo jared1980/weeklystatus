@@ -57,7 +57,18 @@
      > debug mng_action ??
 
    - [7/12] debug AWD_TID invalided
+
      > Add more debug message in midcore.
+
+     > [7/14] Log with 10M(30M) file size has 6550(106417) times cfg get return MID_FAIL. It could be a generic issue in Midcore function mapi_opt_trans().
+
+ ```
+	if(header.act_rsp_code == 0)
+		return MID_SUCCESS;
+	
+	printf("[MIDCORE-DEBUG]: %s action:[%d], item [%s] return MID_FAIL\n", __FUNCTION__, action, (data)?data:"");
+	return MID_FAIL;
+ ```
 
 ### HPQC
  - [HPQC 20290/20291/20292][BBTC][Data] In case the VoIP functionality is deactivated the "Active Services"-list is not updated immediately (reboot necessary)
@@ -86,7 +97,8 @@
      > use inotify to watch /sys/class/net, if new interface, e.g., usb0 created, new folder /sys/class/net/usb0 was created, too.
 	 
 	 > ✅ [7/14] inotify PoC failed, it doesn't support sysfs pseudo fs.
-	 > 🟢 [7/14] try to use libudev.
+
+     > 🟢 [7/14] try to use libudev.
 
      > get Class/SubClass/Protocol via file /sys/class/net/usb0/device/bInterfaceClass, bInterfaceSubClass, bInterfaceProtocol.
 
