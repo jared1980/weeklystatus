@@ -5,7 +5,7 @@ name: Add git tag
 # Controls when the workflow will run
 on:
   schedule:
-    - cron: '0 23 * * 6'
+    - cron: '50 22 * * 5'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
