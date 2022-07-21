@@ -4,44 +4,31 @@
 
 > GRV9519ZWAX44-B-23
 
+[Confluence link - smart4 framwork](https://arc-conf.arcadyan.com.tw/pages/viewpage.action?pageId=144015859&preview=/144015859/144015958/smart4_openwrt_framework.pdf#Note(PDF)-Report:)
 
-
->  Study Smart4 firewall mechanism
-
-[Confluence Link](https://arc-conf.arcadyan.com.tw/pages/viewpage.action?pageId=144015859&preview=/144015859/145490201/smart4_firewall_mechanism.pdf)
-
-- ✅ (W28) Trace firewall mechanism of Smart4. 
-  - ✅ (W27) OpenWrt-based mechanism
-    - ✅ (W27) shell script method `etc/firewall.usr`
-    - ✅ (W27) UCI method `etc/config/firewall`
-  - ✅ (W28) Arcadyan mechanism
-    - ✅ (W28) HTML page method
+[Confluence link - smart4 firewall mechanism](https://arc-conf.arcadyan.com.tw/pages/viewpage.action?pageId=144015859&preview=/144015859/145490201/smart4_firewall_mechanism.pdf#Note(PDF)-Report:)
 
 
 
 ## Others
 
+> Yocto Project
+
+[Confluence link - yocto study](https://arc-conf.arcadyan.com.tw/pages/viewpage.action?pageId=144015859&preview=%2F144015859%2F145490987%2Fstudy_yocto.pdf)
+
+- ✅ (W29) Build yocto `qemux86-64` image.
+- ✅ (W29) Run `qemux86-64` at `qemu` emulator.
+
+- ✅ (W29) Build yocto `raspberrypi3-64` image.
+- ✅ (W29) Run `raspberrypi3-64` at `raspberrypi3 model B+` device.
+
+- ✅ (W29) Build custom package `hello-world` in `qemux86-64` and `raspberrypi` image.
+- ✅ (W29) Verify `hello-world` application work properly.
+- 📌 Learn how to add `patch`.
+- 📌 Learn how to `debug`.
+- 📌 Learn firewall mechanism in poky reference distribution. 
 
 
-> Yocto Project Practice
-
-[Confluence link](https://arc-conf.arcadyan.com.tw/pages/viewpage.action?pageId=144015859&preview=%2F144015859%2F145490987%2Fstudy_yocto.pdf)
-
-- ✅ (W28) Setup Yocto build environment by docker. 
-  github: https://github.com/crops/poky-container 
-  docker hub: https://hub.docker.com/r/crops/poky
-- ✅ (W28) Build Yocto project image by `bitbake core-image-minimal`
-- ✅ (W28) Run Yocto project in emulator by `runqemu qemux86-64 nographic`
-- 📌 Add hello_world application into yocto `qemux86-64` image
-  - 📌 Add custom layer in yocto project.
-  - 📌 Add custom recipe in yocto project.
-
-- 📌 Create yocto `raspberry pi` image.
 
 
 
-> WSL2: windows subsystem Linux version 2
-
-[Confluence link](https://arc-conf.arcadyan.com.tw/pages/viewpage.action?pageId=144015859&preview=/144015859/145490981/study_wsl2.pdf)
-
-- ✅  Display wsl2 UI application on host. ( via X server )
