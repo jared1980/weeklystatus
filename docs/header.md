@@ -1,1 +1,1 @@
-Weekly status of Protocol Team - CW28, 2022
+Weekly status of Protocol Team - CW29, 2022
