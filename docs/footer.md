@@ -11,4 +11,5 @@
   | VRV9518BAAX24-B-2C          | DT-EU         |          |
   | VRV9517WAX44 1-B-23:RDK-POC | Smart 5       |          |
   | VRV9517ZWAX34-A-SP          | SPARK         |          |
+  | WN9722OAX22-DM              | AIOS7         |          |
 
