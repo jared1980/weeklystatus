@@ -160,27 +160,34 @@ Weekly status of Protocol Team - CW29, 2022
     	- Test setup: Five RE connects to GW, then some WLAN clients connect to GW or RE.
     	- Will reopen CS00010013691 after below issue is fixed.
     - 🟢 [CSP CS00012250548] WLAN client can ping www.google.com, but it cannot browse video via YouTube
-    	- 🟢 Test new image in the same environment (work fine, uptime: 14 days)
+    	- 🟢 Collect output of debug commands during testing
 - Issue report from Benedikt
 	- 🟢 Unable to handle kernel paging request at virtual address ffffffc13ea9cfff
 		- PC is at free_block+0x110/0x178
 		- When CONFIG_DEBUG_SLAB is enabled, slab detected double free in cache 'UDP', objp ffffffc02809e780
-		- 🟢 Test image with CONFIG_DEBUG_OBJECTS enabled.
+		- ✅ Test image with CONFIG_DEBUG_OBJECTS enabled. (no further message)
+		- 🟢 Merge a kernel patch (mm: slab: fix potential double free in cache_free) found by Jared and test again
 - DECT registration for one of the Smart 4 Plus (6715x) samples is not working.
-	- ✅ The board data "DECT RFPI" is wrong. (It is correct during the MT test)
-	- 📌 When running the shipping firmware, it is not allowed to overwrite the board data of DECT RFPI, meanwhile, we will record the RFPI value if there is module attempting to overwrite it.
-	- 📌 SHOULD ALL other board data switch to RO when switching to shipping firmware?
+	- The board data "DECT RFPI" is wrong. (It is correct during the MT test)
+	- ✅ Reproduce this issue in our side and verify the solution fixed by Charles.
+	- 🟢 Recover the defective product in the factory.
+	- Improvement:
+		- 📌 It is not allowed to overwrite the board data of DECT RFPI
+		- 📌 Validate the last character of RFPI (0 or 8)
+		- 📌 Update pre-burning version to V04.13_B30e
+- ✅ Provide 3.0.001.0-RC1 to EIT
 
 ### Formal release
 - [8/01] 3.0.001.0
 	- ✅ UI simulation 2.19.204
-	- 📌 New user manual
-	- 📌 HoC 342: Correction of typo of the syslog event G103
-	- 📌 Hoc 343 to 345: Changed "Included in extended syslog only" status to “No” of the syslog event G102, G104 and G105.
+	- ✅ New user manual
+	- ✅ HoC 342: Correction of typo of the syslog event G103
+	- ✅ Hoc 343 to 345: Changed "Included in extended syslog only" status to “No” of the syslog event G102, G104 and G105.
+	- ✅ Update Smart Home to v2.3.21
 	- 📌 19414 [Security] Open Port 3702 LAN IPv4/IPv6
 	- 📌 20557 [IPPBX] Internal call transfer to or from IPPBX extension does not work (BT-029)
-	- 📌 20302 [Multicast Forwarding] Multicast packets are not forwarded if the router uses GPON for WAN access
-	- 📌 20460 [BBTC][E-mail Push] E-Mail push for caller list onyl is not send in case of activation
+	- 🟢 20302 [Multicast Forwarding] Multicast packets are not forwarded if the router uses GPON for WAN access
+	- ✅ 20460 [BBTC][E-mail Push] E-Mail push for caller list onyl is not send in case of activation
 	- 📌 20610 [HDSM][ARC][Smart4Plus HDSM14] CC_GetMeshDevice may mark connected stations as disassociated
 	- ✅	20675 [BBTC][VPN][Internet-Access] When triggering IP address change by an connected VPN client (Wireguard) the Speedport does not come back online
 	- 📌 20676 [GUI] Designation of registered DECT handset after update firmware of default
@@ -192,8 +199,10 @@ Weekly status of Protocol Team - CW29, 2022
     - 🟡 The HW reboot happened when performing the ADSL link up/down test every 2 minutes.
 - Apply ip6tables rule failed when using 3.0.000.0 formal firmware
 	- 🟢 Sync patches relating to lock mechanism from git.netfilter.org, enable -w by default and test it.
-- There is no IPv6 RA accept rule when performing DSL and LTE up/down test
-	- ✅ arc-ipv6cp-up-firewall-cfg.sh calls ip6tables-restore command without --noflush option, so that RA rule is flushed. After that, RA rule isn't recovered anymore.
+	- 📌 Enhance unlock mechanism for file lock
+- 📌 Add a restart_arc_email_push_service.sh to kill sleep process created by arc_email_push_system_report.sh.
+- After adding a MAC based filter entry to bypass list from HAAP side, packets from LAN client were sent via habond interface.
+	- ✅ It is caused by a lost policy routing rule (1000: from all fwmark 0x20000/0x30000 lookup to_ppp)
 
 ## VRV9517WAX44-1-B-23: Typ B (Smart4 TypeB)
 
@@ -206,11 +215,7 @@ Weekly status of Protocol Team - CW29, 2022
 
 ## WA7374442-TS (Telus Boost2.1)
 - 📌 Service blocking list
-- ✅ DoS protection
-- ✅ DMZ
-- ✅ Port Forwarding
-- 🟢 Port triggering
-- ✅ NAT
+- ✅ Port triggering
 - 📌 Integration test with GUI
 
 ## DT-EU
