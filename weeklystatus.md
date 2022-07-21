@@ -282,8 +282,12 @@ Weekly status of Protocol Team - CW29, 2022
         - Script is ready, but test fail.
         - Three threshlod(duty_H, duty_M, duty_L) * two channel
         - Wait R0A board which ADC loop back to specific file.
-    - 📌 (New) PCIe
-        - Need to create script, test pending.
+    - 🟢 (New) PCIe
+        - Script is ready, but test fail.
+        - Wait R0A board contain PCIe interface.
+    - 🟢 (New) MSDC1 Test
+        - Script is ready, but test fail.
+        - Wait R0A board contain SD card interface.
     - 🟢 (Exist) GPIO Loopback Test
         - Script is ready, waiting parameters from Bill.
     - 🟢 (Exist) HDMI TX / eARC
