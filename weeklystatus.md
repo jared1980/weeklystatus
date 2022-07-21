@@ -243,79 +243,76 @@ Weekly status of Protocol Team - CW29, 2022
 # Goat
 
 ## WN9722OAX22-DM (AIOS7.0)
- - 🟢 [07/07] Design and implement architecture of AIOS7.0.
-     - ✅ Add Arcadyan's layer into image.
-     - ✅ Add package group to store recipes from Arcadyan.
- - ✅ [07/06] Create new jira ticket.
-     - 🟢 Ask SU to provide some files to keep synchronize.
-         - 🟢 Device tree (ensure pin mapping right)
-         - 🟡 Bootloader of Little kernel (if SU modify)
-         - 🟡 Flash partition (ensure we write board data in right place)
-         - 🟡 Kernel config (if SU modify)
-     - 🟢 [06/24] Find way to write broad data to specific partition.
-         - 🟡 SU will provide special partition that is available in the eMMC device. (RPMB)
- - 🚫 [07/07] Prepare master file to CNC. (7/15)
-     - ✅ Prepare environment.
-     - ✅ SU will provide AIOS7.0 FW.
-     - 🚫 Try whole process to create master file via AIOS6.5.
-     - 🔴 SU and Arcadyan will upgrade FW respectively after board arrived.
- - 🟢 [07/07] Try test script on AIOS7.0.
-     - 🟡 (New) SN/Test MAC/Test Key Write
-         - Need partition from SU to write these data, test pending.
-     - ✅ (Exist) Bootup and Console Check
-         - No need script, test pass.
-     - 📌 (Exist) Audio Test
-         - Need to find scipt and reference board don't support DMIC, test pending.
-     - 🟢 (Exist) I2C Test
-         - All script is ready, but test fail.
-         - Three mode(detect, set, get) * four channel.
-     - 🟢 (Exist) PWM/ADC Loopback
-         - Need to modify script, test pending.
-         - Three threshlod(duty_H, duty_M, duty_L) * two channel + GPIO write
-     - 🟢 (New) UART Test
-         - Need to create script, test pending.
-     - 📌 (New) MSDC1 Test
-         - Need to create script, test pending.
-     - 📌 (Exist) GPIO Loopback Test
-         - Need to modify script, test pending.
-     - 📌 (Exist) HDMI TX / eARC
-         - Need to modify script, test pending.
-     - 📌 (New) HDMI RX
-         - Need to create script, test pending.
-     - 📌 (Exist) USB P0, P1, P2
-         - Need to modify script, test pending.
-     - 📌 (Exist) Ethernt
-         - Need to modify script, test pending.
-     - 📌 (New) PHY LED / VCORE_PG
-         - Need to create script, test pending.
-     - 📌 (New) PCIe
-         - Need to create script, test pending.
-     - 📌 (New) PWRKEY / RESETB
-         - Need to create script, test pending.
-     - 📌 (Exist) USB_5V Supply and 3.3V Input
-         - Need to modify script, test pending.
-     - 📌 (New) ADC0 - Temp Sensor check
-         - Need to create script, test pending.
-     - 📌 (Exist) Wi-Fi radio calibration
-         - Need to modify script, test pending.
-     - 📌 (New) BT
-         - Need to create script, test pending.
+
+- ✅ [07/06] Create new jira ticket.
+    - 🟢 Ask SU to provide some files to keep synchronize.
+        - 🟢 Device tree (ensure pin mapping is right)
+        - 🟡 Bootloader of Little kernel (if SU modify)
+        - 🟡 Flash partition (ensure we write board data in right place)
+        - 🟡 Kernel config (if SU modify)
+    - 🟢 [06/24] Find way to write broad data to specific partition.
+        - 🟡 SU will provide special partition that is available in the eMMC device. (RPMB)
+
+- 🟢 [07/07] Try test script on AIOS7.0.
+    - ✅ (Exist) Bootup and Console Check
+        - No need script, test pass.
+    - ✅ (Exist) USB P0, P1, P2
+        - Script is ready, test pass.
+        - Three usb interfaces.
+    - 🟢 (Exist) I2C Test
+        - Script is ready, but test fail.
+        - Three mode (detect, set, get) * four channel.
+        - Wait SU provide DTS to modify pin mux.
+    - 🟢 (Exist) Wi-Fi radio calibration
+        - Script is ready, but test fail.
+        - Wait R0A board contain wireless interface card.
+    - 🟢 (Exist) PWM/ADC Loopback
+        - Script is ready, but test fail.
+        - Three threshlod(duty_H, duty_M, duty_L) * two channel
+        - Wait R0A board which ADC loop back to specific file.
+    - 📌 (New) PCIe
+        - Need to create script, test pending.
+    - 🟢 (Exist) GPIO Loopback Test
+        - Script is ready, waiting parameters from Bill.
+    - 🟢 (Exist) HDMI TX / eARC
+        - Test fail.
+        - Wait porting.
+    - 🟢 (New) HDMI RX
+        - Test fail.
+        - Wait porting.
+    - 🟢 (Exist) Ethernt
+        - Script is ready, but test fail.
+        - Wait porting.
+    - 🟢 (New) UART Test
+        - Need to create script, test pending.
+    - 📌 (New) MSDC1 Test
+        - Need to create script, test pending.
+    - 📌 (New) PHY LED / VCORE_PG
+        - Need to create script, test pending.
+    - 📌 (New) PWRKEY / RESETB
+        - Need to create script, test pending.
+    - 📌 (Exist) USB_5V Supply and 3.3V Input
+        - Need to modify script, test pending.
+    - 📌 (New) ADC0 - Temp Sensor check
+        - Need to create script, test pending.
+    - 📌 (New) BT
+        - Need to create script, test pending.
+    - 📌 (Exist) Audio Test
+        - Need to modify scipt, test pending.
+    - 🟡 (New) SN/Test MAC/Test Key Write
+        - Need partition from SU to write these data, test pending.
     
- - 🟡 [06/07] Study document and review git commit log.
- - 🟡 [06/20] Check difference of AIOS6.5 / AIOS7.0 (partition, uboot, little kernel, fastboot, adb...)
+- 🟡 [06/07] Study document and review git commit log.
+- 🟡 [06/20] Check difference of AIOS6.5 / AIOS7.0 (partition, uboot, little kernel, fastboot, adb...)
 
 ## Common
-
-### Utility
- - ✅ [07/07] Fix cp_check bug.
-     - ~~Status will not be updated to latest automatically if source or target branch exist on local. Result will go wrong when either branch is not latest. Add machanism to update branch to latest everytime run this script.~~
-     - Status will not be updated to latest automatically if source or target branch exist on local. Result will go wrong when either branch is not latest. Add warning message let user know status of branch and terminate compare process.
-
 ### CCAPI
 
- - 🟢 [06/30] Study document & review code.
+- 🟢 [06/30] Study document & review code.
 
 ### Docker builder maintain and enhance
+
+### Utility
 
 
 # Archived - 2022H2
@@ -537,45 +534,52 @@ Weekly status of Protocol Team - CW29, 2022
 
 ### WN9722OAX22-DM (AIOS7.0)
 
- - [06/14] Create project "DENON AIOS7.0" and new "AIOS7.0 info" on confluence.
- - [06/20] Discuss whole test plan with Edison.
- - [06/14] Test all script by commands of AIOS6.5.
- - [06/28] Update jira issues
-     - How and where should we write broad data.
-         - New partition will be provided by SU.
-     - What type of dual image will be implemented.
-         - SU will provide CPE like dual image machanism. 
- - [06/30] Prepare AIOS7.0 build code environment and try to build code.
- - [06/14] Create git repo of AIOS seris on gitea server.
-     - AIOS6.5 : Follow and update with codebase provided by Wind. (Including history)
-     - AIOS7.0 : Trace codebase provided by MTK and our develop.
-         - Create four repo. (meta-arcadyan, set_env, script, manifest)
-         - Just trace our layer and script on gitea server not MTK's.
-         - Modify manifest in xml to clone both MTK's and ARC's code via "repo init" command.
- - [07/01] Add and update document on confluence.
-     - Change name "Denon AIOS7.0" to "Denon AIOS series" and update info inside.
-     - Seprate AIOS6.5 / AIOS7.0 to two pages.
-     - Update "Denon AIOS6.5" document.
-     - Add "Denon AIOS7.0" document.
-     - [AIOS series](https://arc-conf.arcadyan.com.tw/pages/viewpage.action?pageId=141329089)
-     - [AIOS6.5](https://arc-conf.arcadyan.com.tw/display/0911866010/AIOS6.5)
-     - [AIOS7.0](https://arc-conf.arcadyan.com.tw/display/0911866010/AIOS7.0)
+- [06/14] Create project "DENON AIOS7.0" and new "AIOS7.0 info" on confluence.
+- [06/20] Discuss whole test plan with Edison.
+- [06/14] Test all script by commands of AIOS6.5.
+- [06/28] Update jira issues
+    - How and where should we write broad data.
+        - New partition will be provided by SU.
+    - What type of dual image will be implemented.
+        - SU will provide CPE like dual image machanism. 
+- [06/30] Prepare AIOS7.0 build code environment and try to build code.
+- [06/14] Create git repo of AIOS seris on gitea server.
+    - AIOS6.5 : Follow and update with codebase provided by Wind. (Including history)
+    - AIOS7.0 : Trace codebase provided by MTK and our develop.
+        - Create four repo. (meta-arcadyan, set_env, script, manifest)
+        - Just trace our layer and script on gitea server not MTK's.
+        - Modify manifest in xml to clone both MTK's and ARC's code via "repo init" command.
+- [07/01] Add and update document on confluence.
+    - Change name "Denon AIOS7.0" to "Denon AIOS series" and update info inside.
+    - Seprate AIOS6.5 / AIOS7.0 to two pages.
+    - Update "Denon AIOS6.5" document.
+    - Add "Denon AIOS7.0" document.
+    - [AIOS series](https://arc-conf.arcadyan.com.tw/pages/viewpage.action?pageId=141329089)
+    - [AIOS6.5](https://arc-conf.arcadyan.com.tw/display/0911866010/AIOS6.5)
+    - [AIOS7.0](https://arc-conf.arcadyan.com.tw/display/0911866010/AIOS7.0)
+ - [07/07] Design and implement architecture of AIOS7.0.
+    - Add Arcadyan's layer into image.
+    - Add package group to store recipes from Arcadyan.
 
 ### Common
 
 #### Docker builder maintain and enhance
 
- - [06/06] Review git commit log.
- - [06/06] Delete duplicate path in commands.
- - [06/06] Merge two create container action cases to one.
-     -  Use "add-host" replace host mode network.
- - [06/06] Add new platform to builder.
-     - MTK
-     - AIOS7.0
- - [06/07] Detect if toolchains are installed when create container.
- - [06/14] Fix smart4 platform "zlib" multi-version problem.
-     - New version of pip will check if there existed muti-version package, disable it.
- - [06/14] Let builder can be executed anywhere not only in builder folder.
+- [06/06] Review git commit log.
+- [06/06] Delete duplicate path in commands.
+- [06/06] Merge two create container action cases to one.
+    -  Use "add-host" replace host mode network.
+- [06/06] Add new platform to builder.
+    - MTK
+    - AIOS7.0
+- [06/07] Detect if toolchains are installed when create container.
+- [06/14] Fix smart4 platform "zlib" multi-version problem.
+    - New version of pip will check if there existed muti-version package, disable it.
+- [06/14] Let builder can be executed anywhere not only in builder folder.
+
+#### Utility
+- [07/07] Fix cp_check bug.
+    - Status will not be updated to latest automatically if source or target branch exist on local. Result will go wrong when either branch is not latest. Add warning message let user know status of branch and terminate compare process.
 
 
 # Project lists
