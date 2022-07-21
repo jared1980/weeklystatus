@@ -60,6 +60,14 @@
 
     > [7/06] Fixed and included in 5.0.001.1 RC7
 
+#### Misc
+  - busybox upgrade issues
+    - ✅ `ls` doesn't support -e anymore.
+    - ✅ [7/06] Fix `awk` syntax issue
+      > - echo ${IF_ADDR} | awk '{FS="."} {print $2}'
+	  > + echo ${IF_ADDR} | awk 'BEGIN {FS="."}; {print $2}'
+    - ✅ [7/08] Query if smarthome bootstrap should also update due to `awk ORS...`
+ 
 ### GRV9519ZWAX44-B-23 (Smart 4 plus)
   - email notification failure with port 465 with commit 2f43cb5
     > [05/19] reported by CL
@@ -82,6 +90,9 @@
 
 #### VPN
   - ✅ [6/23] Fix GUI may hang if tethering is disabled during count down to tethering.
+
+#### Active Service
+  - ✅ [7/13] Fix active service lists for WAN/LAN are blanked when WAN interface is down
 
 #### Hybrid
   - ✅ Hybrid reorder fine tune
